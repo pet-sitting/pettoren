@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :pets do
     resources :bookings, only: [:create]
   end
-  get "dashbord", to: 'dashboards#display'
+  get "dashboard", to: 'dashboards#display'
   patch "bookings/:id", to: 'bookings#update'
 end
