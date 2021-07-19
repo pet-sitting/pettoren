@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[home index show]
   before_action :set_pet, only: %i[show]
 
   def home; end
