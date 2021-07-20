@@ -1,4 +1,5 @@
 class Pet < ApplicationRecord
+  has_many_attached :pets_pics
   belongs_to :user
   has_many :bookings
   validates :name, presence: true
