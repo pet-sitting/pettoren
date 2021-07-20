@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :pets
-  has_many :bookings
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :phone_number, presence: true
+  validates :address, presence: true
+  has_many :pets, dependent: :destroy
+  has_many :bookings_as_sitter, class_name: "Booking", foreign_key: :sitter_id
 end
