@@ -6,37 +6,41 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-require "open-uri"
+
 
 User.destroy_all
 Pet.destroy_all
 
 puts 'Creating 10 fake user...'
 10.times do
-  file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   user = User.new(
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     name:    Faker::Name.name  ,
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
     phone_number:  Faker::PhoneNumber.cell_phone_in_e164,
-    avatar_url: ""
+    avatar_url: "https://res.cloudinary.com/ellie-xyb/image/upload/v1626789695/photo-1605001011156-cbf0b0f67a51_ywjezr.jpg"
   )
-  user.user_pic.attach()
   user.save!
 end
 
 puts "Creating 10 pets"
-10.times do
-  pet = Pet.new(
-    user: User.all.sample,
-    name: Faker::Name.first_name,
-    species: ["dog", "cat", "bird"].sample,
-    picture_url: "",
-    description: "New cute pet is here"
-  )
-  pet.save!
-end
+
+Pet.create!(
+  user: User.all.sample,
+  name: "Spot",
+  species: "Golden Retriever",
+  picture_url: "https://res.cloudinary.com/ellie-xyb/image/upload/v1626789824/photo-1588022274210-7aab7c55c631_vwmy8x.jpg",
+  description: "Spot is very healthy, loves walking and sleeping in the sun."
+)
+
+Pet.create!(
+  user: User.all.sample,
+  name: "Zeke",
+  species: "Border Collie",
+  picture_url: "https://res.cloudinary.com/ellie-xyb/image/upload/v1626790385/photo-1568393691622-c7ba131d63b4_v8kkxp.jpg",
+  description: "Zeke is smart, doesn't like peeing on my pillow."
+)
+
 
 puts 'Finished!'
