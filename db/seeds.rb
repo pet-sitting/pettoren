@@ -6,12 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require "open-uri"
 
 User.destroy_all
 Pet.destroy_all
 
 puts 'Creating 10 fake user...'
 10.times do
+  file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   user = User.new(
     email: Faker::Internet.email,
     password: Faker::Internet.password,
@@ -20,6 +23,7 @@ puts 'Creating 10 fake user...'
     phone_number:  Faker::PhoneNumber.cell_phone_in_e164,
     avatar_url: ""
   )
+  user.user_pic.attach()
   user.save!
 end
 
