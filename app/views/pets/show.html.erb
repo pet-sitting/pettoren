@@ -1,5 +1,6 @@
 <div class="container">
   <h1><%= @pet.name %></h1>
+  <h3><%= User.find(@pet.user_id).name %></h3>
   <p><%= @pet.species %></p>
   <p><%= @pet.description %></p>
 </div>
