@@ -2,7 +2,7 @@
   <% @pets.each do |pet| %>
     <%= link_to pet_path(pet[:id]) do %>
       <div class="pet-card">
-        <img src="<%= pet.picture_url %>" alt="dog's picture">
+        <%= cl_image_tag pet.pet_pic.key, height: 300, width: 400, crop: :fill %>
         <h4><%= pet.name %></h4>
         <p><%= pet.species %></p>
         <p><%= pet.description %></p>
