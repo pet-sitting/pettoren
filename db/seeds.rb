@@ -30,7 +30,7 @@ peta = Pet.new(
   user: User.all.sample,
   name: "Funky",
   species: "Corgi",
-  description: "Funky is very funcy."
+  description: "Funky is very funky."
   )
 file = URI.open('https://images.unsplash.com/photo-1557973557-ddfa9ee8c5bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80')
 peta.pet_pic.attach(io: file, filename: 'funky.png', content_type: 'image/png')
