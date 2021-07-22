@@ -11,6 +11,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/button";
 
 
 
@@ -48,3 +49,5 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+
