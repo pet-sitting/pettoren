@@ -31,7 +31,7 @@
       <p>SEE ALL</p>
     </div>
     <div class="nearby-bottom">
-      <div class="pet-card"  style="background-position: center;background-size: cover;background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path @pets.first.pet_pics.last.key%>')">
+      <div class="pet-card"  style="background-position: center;background-size: cover;background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path @pets.first.pet_pics.first.key%>')">
         <div class="pet-info-wrapper">
           <div class="pet-info">
             <h4><%= Pet.first.name %></h4>
@@ -49,19 +49,21 @@
     <h3>All pets</h3>
     <div class="pets-all-list">
       <% @pets.each do |pet| %>
-        <%= link_to pet_path(pet[:id]) do %>
-          <div class="pet-card"  style="background-position: center;background-size: cover;background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path pet.pet_pics.last.key%>')">
-            <div class="pet-info-wrapper">
-              <div class="pet-info">
-                <h4><%= pet.name %></h4>
-                <p><%= pet.breed %></p>
-              </div>
-              <div class="pet-distance">
-                <i class="fas fa-location-arrow"></i>
-                <p>1.7km away</p>
+        <% if pet.pet_pics.attached? %>
+          <%= link_to pet_path(pet[:id]) do %>
+            <div class="pet-card"  style="background-position: center;background-size: cover;background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path pet.pet_pics.first.key%>')">
+              <div class="pet-info-wrapper">
+                <div class="pet-info">
+                  <h4><%= pet.name %></h4>
+                  <p><%= pet.breed %></p>
+                </div>
+                <div class="pet-distance">
+                  <i class="fas fa-location-arrow"></i>
+                  <p>1.7km away</p>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>

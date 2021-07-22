@@ -34,7 +34,7 @@ peta = Pet.new(
   )
 fileaa = URI.open('https://images.unsplash.com/photo-1557973557-ddfa9ee8c5bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80')
 peta.pet_pics.attach(io: fileaa, filename: 'funkya.png', content_type: 'image/png')
-fileb = URI.open('https://images.unsplash.com/photo-1623513040995-811ad0c34514?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80')
+fileab = URI.open('https://images.unsplash.com/photo-1623513040995-811ad0c34514?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80')
 peta.pet_pics.attach(io: fileab, filename: 'funkyb.png', content_type: 'image/png')
 fileac = URI.open('https://images.unsplash.com/photo-1589965716319-4a041b58fa8a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80')
 peta.pet_pics.attach(io: fileac, filename: 'funkyc.png', content_type: 'image/png')
