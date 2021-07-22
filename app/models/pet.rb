@@ -1,5 +1,5 @@
 class Pet < ApplicationRecord
-  has_one_attached :pet_pic
+  has_many_attached :pet_pics
   belongs_to :user
   has_many :bookings
   has_many :pet_schedules
