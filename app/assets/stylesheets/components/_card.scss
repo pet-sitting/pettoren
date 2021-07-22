@@ -1,0 +1,11 @@
+.pet-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  max-height: 600px;
+  padding: 10px;
+  margin-bottom: 20px;
+  & img {
+    max-width: 500px;
+  }
+}
