@@ -1,0 +1,50 @@
+.pets-nearby-list {
+  margin-bottom: 50px;
+}
+
+.nearby-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  & h3,p {
+    font-weight: bold;
+  }
+}
+
+.pets-filters {
+  display: flex;
+  margin: 50px 0;
+}
+
+.pet-filter {
+  margin-right: 15px;
+  background: #fffafa;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.pet-filter-content {
+  text-align: center;
+  padding: 15px 20px 10px 20px;
+  & p {
+    margin-bottom: 0px;
+    font-size: 14px;
+  }
+  & i {
+    font-size: 26px;
+  }
+}
+
+.pets-all {
+  margin-bottom: 20px;
+  & h3 {
+    font-weight: bold;
+  }
+}
+
+.pets-all-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
