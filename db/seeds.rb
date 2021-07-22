@@ -18,8 +18,7 @@ puts 'Creating 10 fake user...'
     password: Faker::Internet.password,
     name:    Faker::Name.name  ,
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
-    phone_number:  Faker::PhoneNumber.cell_phone_in_e164,
-    avatar_url: ""
+    phone_number:  Faker::PhoneNumber.cell_phone_in_e164
   )
   user.save!
 end
