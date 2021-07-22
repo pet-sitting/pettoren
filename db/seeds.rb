@@ -34,22 +34,28 @@ peta = Pet.new(
   )
 fileaa = URI.open('https://images.unsplash.com/photo-1557973557-ddfa9ee8c5bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80')
 peta.pet_pics.attach(io: fileaa, filename: 'funkya.png', content_type: 'image/png')
-fileab = URI.open('https://images.unsplash.com/photo-1623513040995-811ad0c34514?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80')
+fileb = URI.open('https://images.unsplash.com/photo-1623513040995-811ad0c34514?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80')
 peta.pet_pics.attach(io: fileab, filename: 'funkyb.png', content_type: 'image/png')
 fileac = URI.open('https://images.unsplash.com/photo-1589965716319-4a041b58fa8a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80')
 peta.pet_pics.attach(io: fileac, filename: 'funkyc.png', content_type: 'image/png')
 peta.save
 
-# petb = Pet.new(
-#   user: User.all.sample,
-#   name: "Zeke",
-#   species: "dog",
-#   breed: "Border Collie",
-#   description: "Zeke is smart, doesn't like peeing on my pillow."
-#   )
-# file = URI.open('https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80')
-# petb.pet_pic.attach(io: file, filename: 'funky.png', content_type: 'image/png')
-# petb.save
+petb = Pet.new(
+  user: User.all.sample,
+  name: "Zeke",
+  species: "dog",
+  breed: "Border Collie",
+  description: "Zeke is smart, doesn't like peeing on my pillow."
+  )
+fileba = URI.open('https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80')
+petb.pet_pics.attach(io: fileba, filename: 'zekea.png', content_type: 'image/png')
+filebb = URI.open('https://images.unsplash.com/photo-1587131789767-bdb242897f31?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')
+petb.pet_pics.attach(io: filebb, filename: 'zekeb.png', content_type: 'image/png')
+filebc = URI.open('https://images.unsplash.com/photo-1602973901442-8ad0e9b65bdd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1269&q=80')
+petb.pet_pics.attach(io: filebc, filename: 'zekec.png', content_type: 'image/png')
+filebd = URI.open('https://images.unsplash.com/reserve/UzWklzFdRBSbkRKhEnvc_1-6128.jpg?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+petb.pet_pics.attach(io: filebd, filename: 'zeked.png', content_type: 'image/png')
+petb.save
 
 # petc = Pet.new(
 #   user: User.all.sample,
