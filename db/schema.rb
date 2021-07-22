@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_21_152151) do
+ActiveRecord::Schema.define(version: 2021_07_22_104128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,13 +39,20 @@ ActiveRecord::Schema.define(version: 2021_07_21_152151) do
   create_table "bookings", force: :cascade do |t|
     t.bigint "sitter_id"
     t.bigint "pet_id", null: false
-    t.date "start_time"
-    t.date "end_time"
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "date"
     t.index ["pet_id"], name: "index_bookings_on_pet_id"
     t.index ["sitter_id"], name: "index_bookings_on_sitter_id"
+  end
+
+  create_table "pet_schedules", force: :cascade do |t|
+    t.bigint "pet_id", null: false
+    t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pet_id"], name: "index_pet_schedules_on_pet_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -77,5 +84,6 @@ ActiveRecord::Schema.define(version: 2021_07_21_152151) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "pets"
   add_foreign_key "bookings", "users", column: "sitter_id"
+  add_foreign_key "pet_schedules", "pets"
   add_foreign_key "pets", "users"
 end
