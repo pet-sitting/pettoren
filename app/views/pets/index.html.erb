@@ -1,12 +1,69 @@
 <div class="container">
-  <% @pets.each do |pet| %>
-    <%= link_to pet_path(pet[:id]) do %>
-      <div class="pet-card">
-        <%= cl_image_tag pet.pet_pic.key, height: 300, width: 400, crop: :fill %>
-        <h4><%= pet.name %></h4>
-        <p><%= pet.species %></p>
-        <p><%= pet.description %></p>
+  <div class="pets-filters">
+    <div class="pet-filter dog">
+      <div class="pet-filter-content">
+        <i class="fas fa-dog"></i>
+        <p>Dogs</p>
       </div>
-    <% end %>
-  <% end %>
+    </div>
+    <div class="pet-filter cat">
+      <div class="pet-filter-content">
+        <i class="fas fa-cat"></i>
+        <p>Cats</p>
+      </div>
+    </div>
+    <div class="pet-filter bird">
+      <div class="pet-filter-content">
+        <i class="fas fa-crow"></i>
+        <p>Birds</p>
+      </div>
+    </div>
+    <div class="pet-filter others">
+      <div class="pet-filter-content">
+        <i class="fas fa-angle-double-right"></i>
+        <p>Others</p>
+      </div>
+    </div>
+  </div>
+  <div class="pets-nearby-list">
+    <div class="nearby-top">
+      <h3>Nearby</h3>
+      <p>SEE ALL</p>
+    </div>
+    <div class="nearby-bottom">
+      <div class="pet-card"  style="background-position: center;background-size: cover;background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path @pets.first.pet_pic.key%>')">
+        <div class="pet-info-wrapper">
+          <div class="pet-info">
+            <h4><%= Pet.first.name %></h4>
+            <p><%= Pet.first.breed %></p>
+          </div>
+          <div class="pet-distance">
+            <i class="fas fa-location-arrow"></i>
+            <p>1.7km away</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pets-all">
+    <h3>All pets</h3>
+    <div class="pets-all-list">
+      <% @pets.each do |pet| %>
+        <%= link_to pet_path(pet[:id]) do %>
+          <div class="pet-card"  style="background-position: center;background-size: cover;background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path pet.pet_pic.key%>')">
+            <div class="pet-info-wrapper">
+              <div class="pet-info">
+                <h4><%= pet.name %></h4>
+                <p><%= pet.breed %></p>
+              </div>
+              <div class="pet-distance">
+                <i class="fas fa-location-arrow"></i>
+                <p>1.7km away</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
