@@ -1,7 +1,7 @@
 <div class="container">
   <div class="pet-details">
     <h1><span><%= @pet.name %></span></h1>
-    <%= cl_image_tag @pet.pet_pic.key, class: "pet-image"%>
+    <%= cl_image_tag @pet.pet_pics.first.key, class: "pet-image"%>
     <h3><span>Owner: </span> <%= User.find(@pet.user_id).name %></h3>
     <div class="pet-species-breed">
       <p><span>Species: </span><%= @pet.species.capitalize %></p>
