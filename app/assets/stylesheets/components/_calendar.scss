@@ -1,0 +1,67 @@
+.calendarbox {
+  max-width: 400px;
+  max-height: 600px;
+  background-color: #F9F9F9;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  align-content: center;
+  margin-bottom: 10px;
+}
+
+.calendarbox:hover {
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.month-year-title {
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-arr {
+  position: relative;
+  left: 30px;
+  cursor: pointer;
+}
+
+.left-arr {
+  position: relative;
+  left: -38px;
+  cursor: pointer;
+}
+
+.week-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: calc(50px * 7);
+  margin: 10px auto;
+}
+
+.cell {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell-active {
+  background-color: #80c985;
+  border-radius: 50%;
+  color: white;
+}
+
+.cell-unavailable {
+  opacity: 0.3;
+}
+
+.cell-available {
+  opacity: 1;
+}
+
