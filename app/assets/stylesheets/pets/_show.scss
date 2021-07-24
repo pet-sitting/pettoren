@@ -1,0 +1,21 @@
+.pet-details {
+  & h1 {
+    font-size: 3rem;
+  }
+  & span {
+    font-weight: bold;
+  }
+}
+
+.pet-image {
+  padding: 20px;
+  border-radius: 15px;
+  width: 70%;
+}
+
+.pet-species-breed {
+  display: flex;
+  & p {
+    margin-right: 15px;
+  }
+}
