@@ -4,7 +4,7 @@
   <div class="card-body">
     <h5 class="card-title">Thank you for booking  <strong><%= @booking.pet.name %></strong>!</h5>
     <p>Your booking is now being processed.</p>
-    <p class="card-text">You should hear from the owner very soon!</p>
+    <p class="card-text">You should hear from <strong><%= @booking.pet.user.name %></strong> (the owner) very soon!</p>
     <%= link_to 'Go back to Main Page', pets_path, class: 'btn btn-primary'%>
   </div>
 </div>
