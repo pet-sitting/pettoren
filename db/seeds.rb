@@ -16,8 +16,9 @@ puts 'Creating 10 fake user...'
   user = User.new(
     email: Faker::Internet.email,
     password: Faker::Internet.password,
-    name:    Faker::Name.name  ,
-    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    name:    Faker::Name.name,
+    # address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    address: "Shibuya",
     phone_number:  Faker::PhoneNumber.cell_phone_in_e164
   )
   user.save!
