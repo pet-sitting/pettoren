@@ -13,6 +13,7 @@ class PetsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @pet_schedules = @pet.pet_schedules.map { |pet_schedule| pet_schedule.date.strftime("%Y-%-m-%-d") }.join(",")
   end
 
   private
