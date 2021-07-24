@@ -1,1 +1,129 @@
 // Specific CSS for your home-page
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+}
+
+.wrapper section {
+  padding: 2em;
+}
+
+.wrapper section h1,
+.wrapper section h2,
+.wrapper section .read-btn {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.wrapper section h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.wrapper section p {
+  font-size: 1.2rem;
+}
+
+.wrapper section .clipper {
+  overflow: hidden;
+}
+
+.wrapper section.hero {
+  padding: 8rem;
+  background-size: cover;
+}
+
+.wrapper #banner-text {
+  padding: 20px;
+  background-color: rgba($color: #000000, $alpha: .4);
+}
+
+.wrapper #banner-text .clipper h1,
+.wrapper #banner-text .anim-panel p {
+  color: #fff;
+}
+
+.wrapper section.hero p {
+  width: 70%;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.wrapper section.hero h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.wrapper section.sidebar,
+.wrapper section.subscribe {
+  font-size: 0.9rem;
+  line-height: 1.6em;
+}
+
+.wrapper section.sidebar {
+  background: #ffcc00;
+}
+
+.wrapper section.sidebar .read-btn {
+  margin-top: 2em;
+  display: block;
+  background-position: 0 0.2em;
+}
+
+.wrapper section.subscribe input {
+  width: calc(100% - 2em);
+  padding: 1em;
+  font-family: "Montserrat";
+  margin-bottom: 1em;
+}
+
+.wrapper section.subscribe button {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 1em;
+  border: none;
+  font-family: "Montserrat";
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  header {
+    background: none;
+  }
+  .wrapper {
+    -ms-grid-columns: 70% auto;
+        grid-template-columns: 70% auto;
+    -ms-grid-rows: 60% auto;
+        grid-template-rows: 60% auto;
+        grid-template-areas: "hero featured"
+ "hero subscribe";
+    height: 100vh;
+  }
+  section.hero {
+    grid-row: 1;
+    grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: hero;
+  }
+  section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
