@@ -16,5 +16,4 @@ const filterPets = () => {
   })
 }
 
-// filterPets();
 export { filterPets };
