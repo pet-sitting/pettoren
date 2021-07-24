@@ -27,8 +27,10 @@ require("@ellie-xyb/multi-select-calendar");
 import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { filterPets } from "../components/filters";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  filterPets();
 });

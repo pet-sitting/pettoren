@@ -26,12 +26,11 @@
     <div class="flex-inline" style="margin-top: 100px; position: sticky; top: 7rem;">
       <div class="booking-panel" >
         <%= simple_form_for [@pet, @booking] do |f| %>
-        <x-calendar available-dates="2021-7-21,2021-7-22,2021-7-23,2021-7-24" output-name="booking-dates" />
-        <%= f.submit "Woof", class: 'btn-ghost' %>
+          <x-calendar available-dates="<%= @pet_schedules %>" output-name="booking-dates" />
+          <%= f.submit "Woof", class: 'btn btn-outline-primary my-2 my-sm-0' %>
         <% end %>
       </div>
     </div>
     </div>
   </div>
 </div>
-

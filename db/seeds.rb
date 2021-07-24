@@ -39,6 +39,14 @@ peta.pet_pics.attach(io: fileab, filename: 'funkyb.png', content_type: 'image/pn
 fileac = URI.open('https://images.unsplash.com/photo-1589965716319-4a041b58fa8a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80')
 peta.pet_pics.attach(io: fileac, filename: 'funkyc.png', content_type: 'image/png')
 peta.save
+PetSchedule.create(date: '2021-7-24', pet: peta);
+PetSchedule.create(date: '2021-7-25', pet: peta);
+PetSchedule.create(date: '2021-7-27', pet: peta);
+PetSchedule.create(date: '2021-7-28', pet: peta);
+PetSchedule.create(date: '2021-7-31', pet: peta);
+PetSchedule.create(date: '2021-8-8', pet: peta);
+PetSchedule.create(date: '2021-8-9', pet: peta);
+PetSchedule.create(date: '2021-8-10', pet: peta);
 
 petb = Pet.new(
   user: User.all.sample,
@@ -56,6 +64,14 @@ petb.pet_pics.attach(io: filebc, filename: 'zekec.png', content_type: 'image/png
 filebd = URI.open('https://images.unsplash.com/reserve/UzWklzFdRBSbkRKhEnvc_1-6128.jpg?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
 petb.pet_pics.attach(io: filebd, filename: 'zeked.png', content_type: 'image/png')
 petb.save
+PetSchedule.create(date: '2021-7-25', pet: petb);
+PetSchedule.create(date: '2021-7-26', pet: petb);
+PetSchedule.create(date: '2021-7-30', pet: petb);
+PetSchedule.create(date: '2021-8-31', pet: petb);
+PetSchedule.create(date: '2021-8-1', pet: petb);
+PetSchedule.create(date: '2021-8-2', pet: petb);
+PetSchedule.create(date: '2021-8-7', pet: petb);
+PetSchedule.create(date: '2021-8-8', pet: petb);
 
 petc = Pet.new(
   user: User.all.sample,
@@ -73,6 +89,14 @@ petc.pet_pics.attach(io: filecc, filename: 'spotc.png', content_type: 'image/png
 filecd = URI.open('https://images.unsplash.com/photo-1621012101981-235752aaa7ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
 petc.pet_pics.attach(io: filecd, filename: 'spotd.png', content_type: 'image/png')
 petc.save
+PetSchedule.create(date: '2021-7-24', pet: petc);
+PetSchedule.create(date: '2021-7-25', pet: petc);
+PetSchedule.create(date: '2021-7-27', pet: petc);
+PetSchedule.create(date: '2021-7-28', pet: petc);
+PetSchedule.create(date: '2021-8-2', pet: petc);
+PetSchedule.create(date: '2021-8-5', pet: petc);
+PetSchedule.create(date: '2021-8-6', pet: petc);
+PetSchedule.create(date: '2021-8-7', pet: petc);
 
 petd = Pet.new(
   user: User.all.sample,
@@ -90,6 +114,14 @@ petd.pet_pics.attach(io: filedc, filename: 'luckyc.png', content_type: 'image/pn
 filedd = URI.open('https://images.unsplash.com/photo-1581460000963-755eec994cf0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
 petd.pet_pics.attach(io: filedd, filename: 'luckyd.png', content_type: 'image/png')
 petd.save
+PetSchedule.create(date: '2021-7-30', pet: petd);
+PetSchedule.create(date: '2021-7-31', pet: petd);
+PetSchedule.create(date: '2021-8-5', pet: petd);
+PetSchedule.create(date: '2021-8-11', pet: petd);
+PetSchedule.create(date: '2021-8-12', pet: petd);
+PetSchedule.create(date: '2021-8-15', pet: petd);
+PetSchedule.create(date: '2021-8-18', pet: petd);
+PetSchedule.create(date: '2021-8-19', pet: petd);
 
 pete = Pet.new(
   user: User.all.sample,
@@ -107,6 +139,14 @@ pete.pet_pics.attach(io: fileec, filename: 'kongc.png', content_type: 'image/png
 fileed = URI.open('https://images.unsplash.com/photo-1577239559255-12a0a0fb92eb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
 pete.pet_pics.attach(io: fileed, filename: 'kongd.png', content_type: 'image/png')
 pete.save
+PetSchedule.create(date: '2021-7-24', pet: pete);
+PetSchedule.create(date: '2021-7-25', pet: pete);
+PetSchedule.create(date: '2021-7-29', pet: pete);
+PetSchedule.create(date: '2021-7-30', pet: pete);
+PetSchedule.create(date: '2021-7-31', pet: pete);
+PetSchedule.create(date: '2021-8-3', pet: pete);
+PetSchedule.create(date: '2021-8-18', pet: pete);
+PetSchedule.create(date: '2021-8-19', pet: pete);
 
 petf = Pet.new(
   user: User.all.sample,
@@ -122,6 +162,14 @@ petf.pet_pics.attach(io: filefb, filename: 'rufusb.png', content_type: 'image/pn
 filefc = URI.open('https://images.unsplash.com/photo-1530391277665-49655f7b0b90?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
 petf.pet_pics.attach(io: filefc, filename: 'rufusc.png', content_type: 'image/png')
 petf.save
+PetSchedule.create(date: '2021-7-24', pet: petf);
+PetSchedule.create(date: '2021-7-28', pet: petf);
+PetSchedule.create(date: '2021-7-29', pet: petf);
+PetSchedule.create(date: '2021-8-1', pet: petf);
+PetSchedule.create(date: '2021-8-2', pet: petf);
+PetSchedule.create(date: '2021-8-3', pet: petf);
+PetSchedule.create(date: '2021-8-15', pet: petf);
+PetSchedule.create(date: '2021-8-16', pet: petf);
 
 petg = Pet.new(
   user: User.all.sample,
@@ -139,6 +187,14 @@ petg.pet_pics.attach(io: filegc, filename: 'killerc.png', content_type: 'image/p
 filegd = URI.open('https://images.unsplash.com/photo-1443806798002-651c462956ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1352&q=80')
 petg.pet_pics.attach(io: filegd, filename: 'killerd.png', content_type: 'image/png')
 petg.save
+PetSchedule.create(date: '2021-7-25', pet: petg);
+PetSchedule.create(date: '2021-7-27', pet: petg);
+PetSchedule.create(date: '2021-7-29', pet: petg);
+PetSchedule.create(date: '2021-8-6', pet: petg);
+PetSchedule.create(date: '2021-8-7', pet: petg);
+PetSchedule.create(date: '2021-8-15', pet: petg);
+PetSchedule.create(date: '2021-8-18', pet: petg);
+PetSchedule.create(date: '2021-8-19', pet: petg);
 
 peth = Pet.new(
   user: User.all.sample,
@@ -156,6 +212,14 @@ peth.pet_pics.attach(io: filehc, filename: 'chichic.png', content_type: 'image/p
 filehd = URI.open('https://images.unsplash.com/photo-1559681369-e8b09c685cf2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80')
 peth.pet_pics.attach(io: filehd, filename: 'chichid.png', content_type: 'image/png')
 peth.save
+PetSchedule.create(date: '2021-7-27', pet: peth);
+PetSchedule.create(date: '2021-7-28', pet: peth);
+PetSchedule.create(date: '2021-7-29', pet: peth);
+PetSchedule.create(date: '2021-8-1', pet: peth);
+PetSchedule.create(date: '2021-8-2', pet: peth);
+PetSchedule.create(date: '2021-8-15', pet: peth);
+PetSchedule.create(date: '2021-8-18', pet: peth);
+PetSchedule.create(date: '2021-8-19', pet: peth);
 
 peti = Pet.new(
   user: User.all.sample,
@@ -171,6 +235,14 @@ peti.pet_pics.attach(io: fileib, filename: 'bugsb.png', content_type: 'image/png
 fileic = URI.open('https://images.unsplash.com/photo-1585969646097-a1b0038c37a1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
 peti.pet_pics.attach(io: fileic, filename: 'bugsc.png', content_type: 'image/png')
 peti.save
+PetSchedule.create(date: '2021-7-28', pet: peti);
+PetSchedule.create(date: '2021-7-29', pet: peti);
+PetSchedule.create(date: '2021-7-30', pet: peti);
+PetSchedule.create(date: '2021-8-2', pet: peti);
+PetSchedule.create(date: '2021-8-3', pet: peti);
+PetSchedule.create(date: '2021-8-4', pet: peti);
+PetSchedule.create(date: '2021-8-5', pet: peti);
+PetSchedule.create(date: '2021-8-6', pet: peti);
 
 petj = Pet.new(
   user: User.all.sample,
@@ -188,5 +260,12 @@ petj.pet_pics.attach(io: filejc, filename: 'eddiec.png', content_type: 'image/pn
 filejd = URI.open('https://images.unsplash.com/photo-1554039533-eb4a99deaf72?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
 petj.pet_pics.attach(io: filejd, filename: 'eddied.png', content_type: 'image/png')
 petj.save
-
+PetSchedule.create(date: '2021-7-24', pet: petj);
+PetSchedule.create(date: '2021-7-25', pet: petj);
+PetSchedule.create(date: '2021-7-26', pet: petj);
+PetSchedule.create(date: '2021-7-29', pet: petj);
+PetSchedule.create(date: '2021-7-30', pet: petj);
+PetSchedule.create(date: '2021-7-31', pet: petj);
+PetSchedule.create(date: '2021-8-3', pet: petj);
+PetSchedule.create(date: '2021-8-4', pet: petj);
 puts 'Finished!'

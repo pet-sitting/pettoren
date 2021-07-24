@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'bookings/confirm'
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -6,5 +7,5 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
   get "dashboard", to: 'dashboards#display'
-  resources :bookings, only: [:update]
+  resources :bookings, only: [:update, :show]
 end
