@@ -1,11 +1,12 @@
 .navbar-lewagon {
     justify-content: space-between;
     background: white;
-    // position: fixed;
+    position: fixed;
     width: 100%;
     top: 0;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -38,4 +39,8 @@
     transform: rotate(
 45deg
 );
+}
+
+.top-margin {
+margin-top: 80px;
 }
