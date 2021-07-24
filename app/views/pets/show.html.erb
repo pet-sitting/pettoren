@@ -1,7 +1,31 @@
 <div class="container">
-  <h1><%= @pet.name %></h1>
-  <%cl_image_tag @pet.pet_pic.key, height: 300, width: 400, crop: :fill  %>
-  <h3><%= User.find(@pet.user_id).name %></h3>
-  <p><%= @pet.species %></p>
-  <p><%= @pet.description %></p>
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="pet-details">
+        <h1><span><%= @pet.name %></span></h1>
+        <%= cl_image_tag @pet.pet_pics.first.key, class: "pet-image"%>
+        <h3><span>Owner: </span> <%= User.find(@pet.user_id).name %></h3>
+        <div class="pet-species-breed">
+          <p><span>Species: </span><%= @pet.species.capitalize %></p>
+          <p><span>Breed: </span><%= @pet.breed.capitalize %></p>
+        </div>
+        <div class="pet-location">
+          <p><span>Location: </span></p>
+        </div>
+        <div class="pet-description">
+          <p><span>Description:</span> </p>
+          <p><%= @pet.description %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4" style="margin-top: 20px; position: sticky; top: 20px;">
+      <div class="booking-panel">
+        <%= simple_form_for [@pet, @booking] do |f| %>
+        <x-calendar available-dates="2021-7-21,2021-7-22,2021-7-23,2021-7-24" output-name="booking-dates" />
+        <%= f.submit "Woof", class: 'btn btn-outline-primary my-2 my-sm-0' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
