@@ -20,7 +20,9 @@ class PetsController < ApplicationController
     @markers =
       {
         lat: User.find(@pet.user_id).latitude,
-        lng: User.find(@pet.user_id).longitude
+        lng: User.find(@pet.user_id).longitude,
+
+        image_url: helpers.asset_url('paw-picture.png')
       }
   end
 
