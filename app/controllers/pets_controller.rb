@@ -16,6 +16,14 @@ class PetsController < ApplicationController
     @booking.pet = @pet
     @booking.sitter = current_user
     @pet_schedules = @pet.pet_schedules.map { |pet_schedule| pet_schedule.date.strftime("%Y-%-m-%-d") }.join(",")
+
+    @markers =
+      {
+        lat: User.find(@pet.user_id).latitude,
+        lng: User.find(@pet.user_id).longitude,
+
+        image_url: helpers.asset_url('paw-picture.png')
+      }
   end
 
   private
