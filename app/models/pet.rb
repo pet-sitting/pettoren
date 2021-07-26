@@ -6,4 +6,14 @@ class Pet < ApplicationRecord
   validates :name, presence: true
   validates :user_id, presence: true
   validates :description, presence: true, length: { in: 20..1000 }
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :name, :species, :breed ],
+    associated_against: {
+      user: [ :name ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 end
