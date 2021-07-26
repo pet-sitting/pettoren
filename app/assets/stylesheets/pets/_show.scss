@@ -1,38 +1,42 @@
-.pet-details {
-  & h1 {
-    font-size: 5rem;
-    font-family: Montserrat;
-    text-shadow: 2px 2px 8px black;
+// .pet-details {
+//   & h1 {
+//     font-size: 5rem;
+//     font-family: Montserrat;
+//   }
+//   & span {
+//     font-weight: bold;
+//   }
+// }
 
-  }
-  & span {
-    font-weight: bold;
-  }
-}
+// .pet-image {
+//     padding: 0px;
+//     border-radius: 45px;
+//     width: 100%;
+//     margin: 0px;
+// }
 
-.pet-image {
-    padding: 0px;
-    border-radius: 45px;
-    width: 100%;
-    margin: 0px;
-
-}
-
-.pet-species-breed {
-  display: flex;
-  & p {
-    margin-right: 15px;
-  }
-}
+// .pet-species-breed {
+//   display: flex;
+//   & p {
+//     margin-right: 15px;
+//   }
+// }
 
 
 .show-card {
-    height: 517px;
-    border-radius: 32px;
+    height: 520px;
+    border-radius: 16px;
     width: 100%;
-    padding-left: 77px;
-    padding-top: 60px;
-
 }
 
+.pet-details-wrapper {
+  display: flex;
+}
 
+.pet-details-column {
+  flex: 65%;
+}
+
+.calendar {
+  flex: 35%;
+}
