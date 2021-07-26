@@ -4,21 +4,47 @@
 
 <div style="width: 100vw;" class="d-none d-lg-block">
   <div class="row mt-5">
-    <div class="col-lg-8 offset-lg-2 ">
+    <div class="col-lg-6 offset-lg-3">
       <div style="width: 100%; height: 100%; padding-top: 40px;">
-        <p>Home ➤ Add your pet</p>
+        <p>Home <i class="fas fa-angle-right"></i>  Add your pet</p>
         <p style="font-size: 2em">Add your pet</p>
       </div>
     </div>
+
+
+    <div style="background-color: white; padding: 40px; border-radius: 3px; box-shadow: 2px 5px 15px rgba(0,0,0,0.1)" class="col-lg-6 offset-lg-3">
+      <%= simple_form_for(@pet) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :species %>
+        <%= f.input :breed %>
+        <%= f.input :description, as: :text, input_html: {rows: 8} %>
+        <%= f.submit "Post", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
   </div>
 </div>
+
 <div style="width: 100vw;" class="d-block d-lg-none">
-  <div class="row mt-5">
-    <div class="col-12">
-      <div style="background-color: lightgrey; width: 100%; height: 100%; padding: 5px">
-        <p style="padding-left: 8px">⁌Home</p>
+  <div class="mt-5" style="width:100vw;">
+    <div>
+      <div style="width: 100%; height: 100%;">
+        <p style="padding-left: 15px"> <i class="fas fa-angle-left"></i> Home</p>
         <p style="text-align: center; font-size: 2em">Add your pet</p>
       </div>
     </div>
+
+    <div style="background-color: white; padding: 50px; width:100%;">
+      <%= simple_form_for(@pet) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :species %>
+        <%= f.input :breed %>
+        <%= f.input :description, as: :text, input_html: {rows: 8} %>
+        <%= f.submit "Post", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
   </div>
 </div>
+
+
