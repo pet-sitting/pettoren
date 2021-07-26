@@ -2,7 +2,11 @@
   <%= f.input :name %>
   <%= f.input :species %>
   <%= f.input :breed %>
-  <%= f.input :pet_pics, label: 'Picture(s)', as: :file, input_html: { multiple: true }, required: true %>
-  <%= f.input :description, as: :text, input_html: {rows: 8} %>
+  <div class="upload-box">
+    <%= f.input :pet_pics, as: :file, input_html: { multiple: true }, required: true  %>
+    <i class="far fa-image"></i>
+    <p>Add picture(s)</p>
+  </div>
+  <%= f.input :description, as: :text, input_html: {rows: 8}%>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
