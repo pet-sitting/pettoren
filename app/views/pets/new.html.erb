@@ -2,37 +2,29 @@
   <%= link_to "Add your pet(s)", new_pet_path %>
 <% end %>
 
-<div style="width: 100vw;" class="d-none d-lg-block">
-  <div class="row mt-5">
+<div class="w-100 d-none d-lg-block">
+  <div class="m-5">
     <div class="col-lg-6 offset-lg-3">
-      <div style="width: 100%; height: 100%; padding-top: 40px;">
-        <p>Home <i class="fas fa-angle-right"></i>  Add your pet</p>
-        <p style="font-size: 2em">Add your pet</p>
-      </div>
-    </div>
-
-
+      <%= link_to "Home", pets_path %>
+      <i class="fas fa-angle-right"></i><span> Add your pet</span>
+      <h2>Add your pet</h2>
+  </div>
     <div style="background-color: white; padding: 40px; border-radius: 3px; box-shadow: 2px 5px 15px rgba(0,0,0,0.1)" class="col-lg-6 offset-lg-3">
       <%= render 'shared/simple_form' %>
     </div>
-
   </div>
 </div>
 
-<div style="width: 100vw;" class="d-block d-lg-none">
-  <div class="mt-5" style="width:100vw;">
-    <div>
-      <div style="width: 100%; height: 100%;">
-        <p style="padding-left: 15px"> <i class="fas fa-angle-left"></i> Home</p>
-        <p style="text-align: center; font-size: 2em">Add your pet</p>
-      </div>
+<div class="w-100 d-block d-lg-none">
+  <div class="mt-5">
+    <div class="p-3">
+      <%= link_to pets_path do %>
+        <p><i class="fas fa-angle-left"></i> Home</p>
+      <% end %>
+     <h2 class="text-center pb-4">Add your pet</h2>
     </div>
-
     <div style="background-color: white; padding: 50px; width:100%;">
       <%= render 'shared/simple_form' %>
     </div>
-
   </div>
 </div>
-
-
