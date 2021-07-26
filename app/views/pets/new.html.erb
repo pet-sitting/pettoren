@@ -17,6 +17,7 @@
         <%= f.input :name %>
         <%= f.input :species %>
         <%= f.input :breed %>
+        <%= f.input :pet_pics, as: :file, input_html: { multiple: true } %>
         <%= f.input :description, as: :text, input_html: {rows: 8} %>
         <%= f.submit "Post", class: "btn btn-primary" %>
       <% end %>
@@ -39,6 +40,7 @@
         <%= f.input :name %>
         <%= f.input :species %>
         <%= f.input :breed %>
+        <%= f.input :pet_pics, as: :file, input_html: { multiple: true } %>
         <%= f.input :description, as: :text, input_html: {rows: 8} %>
         <%= f.submit "Post", class: "btn btn-primary" %>
       <% end %>
