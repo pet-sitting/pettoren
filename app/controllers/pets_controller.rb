@@ -31,10 +31,25 @@ class PetsController < ApplicationController
     authorize @pet
   end
 
+  def create
+    @pet = Pet.new(pet_params)
+    @pet.user = current_user
+    if @pet.save
+      redirect_to pet_path(@pet)
+    else
+      render :new
+    end
+    authorize @pet
+  end
+
   private
 
   def set_pet
     @pet = Pet.find(params[:id])
     authorize @pet
+  end
+
+  def pet_params
+    params.require(:pet).permit(:name, :species, :breed, :description, pet_pics: [])
   end
 end
