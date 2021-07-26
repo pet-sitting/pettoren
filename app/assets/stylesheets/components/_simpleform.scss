@@ -1,6 +1,6 @@
 .simple_form div.input {
   width: 100vw;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 .simple_form label {
@@ -12,3 +12,19 @@
   font-size: 1.2em;
 }
 
+.simple_form input {
+  background-color: #FCFCFD;
+  border-radius: 6px;
+  height: 45px;
+}
+
+.simple_form input[type='submit'] {
+  margin: 15px 10% 15px 10%;
+  width: 80%;
+  background-color: #11beae;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: .15s linear;
+}
