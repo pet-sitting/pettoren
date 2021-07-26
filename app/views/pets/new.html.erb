@@ -1,0 +1,3 @@
+<% if policy(Pet).create? %>
+  <%= link_to "Add your pet(s)", new_pet_path %>
+<% end %>

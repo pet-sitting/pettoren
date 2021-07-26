@@ -26,6 +26,11 @@ class PetsController < ApplicationController
       }
   end
 
+  def new
+    @pet = Pet.new
+    authorize @pet
+  end
+
   private
 
   def set_pet
