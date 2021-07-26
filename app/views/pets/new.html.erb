@@ -3,15 +3,17 @@
 <% end %>
 
 <div class="w-100 d-none d-lg-block">
-  <div class="m-5">
-    <div class="col-lg-6 offset-lg-3">
-      <%= link_to "Home", pets_path %>
-      <i class="fas fa-angle-right"></i><span> Add your pet</span>
-      <h2>Add your pet</h2>
-  </div>
-    <div style="background-color: white; padding: 40px; border-radius: 3px; box-shadow: 2px 5px 15px rgba(0,0,0,0.1)" class="col-lg-6 offset-lg-3">
-      <%= render 'shared/simple_form' %>
+  <div class="mt-5">
+    <div class="p-3">
+      <div class="col-lg-6 offset-lg-3">
+        <%= link_to "Home", pets_path %>
+        <i class="fas fa-angle-right"></i><span> Add your pet</span>
+        <h2>Add your pet</h2>
+      </div>
     </div>
+  </div>
+  <div style="background-color: white; padding: 40px; border-radius: 3px; box-shadow: 2px 5px 15px rgba(0,0,0,0.1)" class="col-lg-6 offset-lg-3">
+    <%= render 'shared/simple_form' %>
   </div>
 </div>
 
