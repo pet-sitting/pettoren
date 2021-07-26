@@ -8,8 +8,10 @@
 require 'faker'
 require "open-uri"
 
-User.destroy_all
+Booking.destroy_all
+PetSchedule.destroy_all
 Pet.destroy_all
+User.destroy_all
 
 puts 'Creating 10 fake user...'
 # 10.times do
