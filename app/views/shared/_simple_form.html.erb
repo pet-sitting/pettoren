@@ -1,0 +1,8 @@
+<%= simple_form_for(@pet) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :species %>
+  <%= f.input :breed %>
+  <%= f.input :pet_pics, label: 'Picture(s)', as: :file, input_html: { multiple: true }, required: true %>
+  <%= f.input :description, as: :text, input_html: {rows: 8} %>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

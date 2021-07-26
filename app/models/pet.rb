@@ -8,4 +8,5 @@ class Pet < ApplicationRecord
   validates :species, presence: true
   validates :user_id, presence: true
   validates :description, presence: true, length: { in: 20..1000 }
+  validates :pet_pics, presence: true
 end
