@@ -2,8 +2,12 @@
   <%= f.input :name %>
   <%= f.input :species %>
   <%= f.input :breed %>
+  <div id="your_preview_id"></div>
   <div class="upload-box">
     <%= f.input :pet_pics, as: :file, input_html: { multiple: true }, required: true  %>
+    <% if @pet.pet_pics.attached? %>
+      <image src="<%= url_for(@pet.pet.pics.first) %>">
+    <% end %>
     <i class="far fa-image"></i>
     <p>Add picture(s)</p>
   </div>
