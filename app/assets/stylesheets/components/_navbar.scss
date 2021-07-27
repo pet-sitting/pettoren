@@ -44,3 +44,20 @@
 .top-margin {
 margin-top: 80px;
 }
+
+
+.search-button {
+    background-color: transparent;
+    transform: rotate(
+45deg
+ );
+    border-color: transparent;
+}
+
+.flex {
+  align-items: center;
+}
+
+.form-control {
+  border-radius: 22px;
+}
