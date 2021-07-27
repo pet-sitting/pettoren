@@ -22,11 +22,17 @@
   margin: 25px 7% 15px 7%;
   width: 86%;
   background-color: #11beae;
+  color: white;
   border: none;
   padding: 10px 16px;
   cursor: pointer;
   border-radius: 8px;
-  transition: .15s linear;
+  // transition: .15s linear;
+  transition: all 0.4s ease-out;
+  &:hover {
+    background-color: #80c985;
+    color: #3F3F44;
+  }
 }
 
 

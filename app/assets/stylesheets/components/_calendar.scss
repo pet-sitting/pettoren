@@ -1,10 +1,8 @@
 .wrapbox {
-  max-width: 700px;
   height: 580px;
   display: flex;
   justify-content: center;
   text-align: center;
-  background-color: #F9F9F9;
 }
 .calendarbox {
   height: 430px;
@@ -38,6 +36,9 @@
   width: 18%;
   display: flex;
   justify-content: space-between;
+  & p {
+    color: #80c985;
+  }
 }
 
 .week-row {
