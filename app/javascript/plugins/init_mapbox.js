@@ -39,7 +39,8 @@ const initMarker = (markers, map) => {
   element.style.backgroundSize = 'contain';
   element.style.width = '30px';
   element.style.height = '30px';
-  element.style.backgroundColor = '#89BF9F';
+  element.style.backgroundColor = '#CCEABB';
+  element.style.border = "1px solid #3F3F44"
   element.style.borderRadius = '50%';
   new mapboxgl.Marker(element)
     .setLngLat([markers.lng, markers.lat])

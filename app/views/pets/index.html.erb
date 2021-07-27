@@ -28,9 +28,12 @@
   <div class="pets-nearby-list">
     <div class="nearby-top">
       <h3>Nearby</h3>
-      <p>SEE ALL</p>
+      <%# <p>SEE ALL</p> %>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        SEE ALL
+      </button>
     </div>
-    <div class="nearby-bottom">
+    <div class="nearby-bottom collapse" id="collapseExample">
       <% nearby_users = User.near( current_user.address, 2 ) %>
       <% users_ids = nearby_users.map { |nearby_user| nearby_user.id } %>
       <% nearby_pets = Pet.all.select { |nearby_pet| users_ids.include? nearby_pet.user_id } %>

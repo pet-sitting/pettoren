@@ -1,40 +1,52 @@
 <div class="container top-margin">
-  <div class="row">
-    <div class="col-lg-8">
-      <div class="pet-details">
-        <div class="show-card" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path @pet.pet_pics.first.key%>')">
-        <h1><span><%= @pet.name %></span></h1>
+  <div class="show-card-wrapper">
+    <div class="show-card" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path @pet.pet_pics.first.key%>')">
+  </div>
+  <div class="carousel">
+    <div class="owl-carousel owl-theme">
+      <% @pet.pet_pics.each_with_index do |pet_pic, index| %>
+        <div class="item" data-hash='<%= index %>'>
+          <img src="<%= cl_image_path pet_pic.key %>" alt="photo">
         </div>
-        <div class="flex">
-          <div class="pet-species-breed subcards">
-            <p><span>Species: </span> <br> <%= @pet.species.capitalize %></p>
-            <p><span>Breed: </span> <br> <%= @pet.breed.capitalize %></p>
-          </div>
-          <h3 class="subcards"><span>Owner: </span> <br> <%= User.find(@pet.user_id).name %></h3>
-        </div>
-        <div class="pet-location subcards">
-          <p><span>Location: </span></p>
-          <div id="map"
-            style="width: 100%; height: 600px;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
-        </div>
-        <div class="pet-description subcards">
-          <p><span>Description:</span> </p>
-          <p><%= @pet.description %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="pet-details-wrapper">
+    <div class="pet-details-column">
+      <div class="details-name-breed">
+        <h2><%= @pet.name %></h2>
+        <p><span>Breed: </span> <%= @pet.breed.capitalize %></p>
+      </div>
+      <div class="line"></div>
+      <div class="details-description">
+        <p><span>Description:</span></p>
+        <p><%= @pet.description %></p>
+      </div>
+      <div class="line"></div>
+      <div class="description-owner">
+        <p><span>Owner: </span> <%= User.find(@pet.user_id).name %></p>
+        <p><span>Address: </span> <%= User.find(@pet.user_id).address %></p>
+      </div>
+      <div class="line"></div>
+      <div class="pet-location">
+        <p><span>Location:</span></p>
+        <div id="map"
+          style="width: 100%; height: 400px; margin-top: 15px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
     </div>
-    <div class="col-lg-4" style="position: sticky; top: 20px;">
-    <div class="flex-inline" style="margin-top: 100px; position: sticky; top: 7rem;">
-      <div class="booking-panel" >
-        <%= simple_form_for [@pet, @booking] do |f| %>
-          <x-calendar available-dates="<%= @pet_schedules %>" output-name="booking-dates" />
-          <%= f.submit "Woof", class: 'btn btn-outline-primary my-2 my-sm-0' %>
-        <% end %>
+    <div class="calendar">
+      <div class="flex-inline" style="position: sticky; top: 7rem;">
+        <h3>Check <%= @pet.name %>'s availability!</h3>
+        <div class="booking-panel" >
+          <%= simple_form_for [@pet, @booking] do |f| %>
+            <x-calendar available-dates="<%= @pet_schedules %>" output-name="booking-dates" />
+            <%= f.submit "Woof", class: 'btn btn-outline-primary my-2 my-sm-0' %>
+          <% end %>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 </div>
