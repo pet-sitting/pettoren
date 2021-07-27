@@ -93,6 +93,14 @@
 
 
 @media (min-width: 300px) {
+  .sf-outfit-schedule {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+    padding: 50px;
+    width:100%;
+  }
   .sf-outfit {
     background-color: white;
     padding: 50px;
@@ -101,6 +109,18 @@
 }
 
 @media (min-width: 992px) {
+  .sf-outfit-schedul {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+    background-color: white;
+    padding: 40px;
+    border-radius: 3px;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.1);
+    max-width: 50%;
+    margin: 30px auto;
+  }
   .sf-outfit {
     background-color: white;
     padding: 40px;
