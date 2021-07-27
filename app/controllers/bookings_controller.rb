@@ -20,5 +20,6 @@ class BookingsController < ApplicationController
     else
       redirect_to booking_path(@booking)
     end
+    authorize Booking
   end
 end
