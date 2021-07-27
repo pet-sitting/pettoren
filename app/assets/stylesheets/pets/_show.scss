@@ -1,28 +1,3 @@
-// .pet-details {
-//   & h1 {
-//     font-size: 5rem;
-//     font-family: Montserrat;
-//   }
-//   & span {
-//     font-weight: bold;
-//   }
-// }
-
-// .pet-image {
-//     padding: 0px;
-//     border-radius: 45px;
-//     width: 100%;
-//     margin: 0px;
-// }
-
-// .pet-species-breed {
-//   display: flex;
-//   & p {
-//     margin-right: 15px;
-//   }
-// }
-
-
 .show-card {
     height: 520px;
     border-radius: 16px;
@@ -63,9 +38,6 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  & h3 {
-    margin-bottom: 20px;
-  }
 }
 
 .details-name-breed h2 {

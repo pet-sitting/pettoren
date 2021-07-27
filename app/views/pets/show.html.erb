@@ -2,26 +2,15 @@
   <div class="show-card-wrapper">
     <div class="show-card" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path @pet.pet_pics.first.key%>')">
   </div>
-
-<ol class="carousel-indicators">
-   <% @pet.pet_pics.each_with_index do |photo, n| %>
-     <li data-target='#MyCarousel' data-slide-to="#{n}" class="#{'active' if n == 0}"></li>
-   <% end %>
-</ol>
-
-<div class="carousel-inner" role="listbox">
-  <div class="item active">
-    <%= cl_image_path @pet.pet_pics.first.key %>
+  <div class="carousel" style="border: 1px solid red;">
+    <div class="owl-carousel owl-theme">
+      <% @pet.pet_pics.each do |pet_pic| %>
+        <div class="item">
+          <img src="<%= cl_image_path pet_pic.key %>" alt="photo">
+        </div>
+      <% end %>
+    </div>
   </div>
-  <% @pet.pet_pics.drop(1).each do |photo| %>
-     <div class="item">
-       <img src="<%= cl_image_path photo.key %>" alt="">
-     </div>
-  <% end %>
-</div>
-
-
-  <div class="carousel" style="border: 1px solid red;height: 360px;"></div>
   <div class="pet-details-wrapper" style="border: 1px solid red;">
     <div class="pet-details-column" style="border: 1px solid red;">
       <div class="details-name-breed">
@@ -51,6 +40,7 @@
     <div class="calendar" style="border: 1px solid red;">
       <div class="flex-inline" style="position: sticky; top: 7rem;">
         <h3>Check <%= @pet.name %>'s availablity!</h3>
+        <div class="line"></div>
         <div class="booking-panel" >
           <%= simple_form_for [@pet, @booking] do |f| %>
             <x-calendar available-dates="<%= @pet_schedules %>" output-name="booking-dates" />
