@@ -7,18 +7,12 @@ class PetSchedulesController < ApplicationController
   end
 
   def create
-    @schedule = PetSchedule.new(schedule_params)
-    if @schedule.save
-      redirect_to pet_path(@pet)
-    else
-      render :new
+    params[:"booking-dates"].split(',').each do |date|
+      @schedule = PetSchedule.new(pet_id: params[:pet_id])
+      @schedule.date = Date.parse(date)
+      @schedule.save
     end
+    redirect_to pet_path(params[:pet_id])
     authorize @schedule
-  end
-
-  private
-
-  def schedule_params
-    params.require(:pet_schedule).permit(%i[pet_id date])
   end
 end
