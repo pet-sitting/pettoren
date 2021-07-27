@@ -112,6 +112,12 @@ padding: 44px;
 
  }
 
+ & i {
+
+  text-shadow: 2px 2px 4px black;
+
+ }
+
 }
 
 .filter:hover {
@@ -126,6 +132,12 @@ box-shadow: 0 8px 16px rgba(0,0,0,0.3);
  }
 
  & p {
+  text-shadow: 2px 2px 1px black;
+
+ }
+
+  & i {
+
   text-shadow: 2px 2px 1px black;
 
  }
