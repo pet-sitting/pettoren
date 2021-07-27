@@ -1,0 +1,14 @@
+<%= simple_form_for(@pet) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :species %>
+  <%= f.input :breed %>
+  <div class="upload-box">
+    <div id="preview_box">
+    </div>
+    <%= f.input :pet_pics, as: :file, input_html: { multiple: true }, required: true %>
+    <i class="far fa-image"></i>
+    <p>Add picture(s)</p>
+  </div>
+  <%= f.input :description, as: :text, input_html: {rows: 8}%>
+  <%= f.submit "save and add schedules", class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,30 @@
+<% if policy(Pet).create? %>
+  <%= link_to "Add your pet(s)", new_pet_path %>
+<% end %>
+
+<div class="w-100 d-none d-lg-block">
+  <div class="mt-5">
+    <div class="p-3">
+      <div class="col-lg-6 offset-lg-3">
+        <%= link_to "Home", pets_path %>
+        <i class="fas fa-angle-right"></i><span> Add your pet</span>
+        <h2>Add your pet</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w-100 d-block d-lg-none">
+  <div class="mt-5">
+    <div class="p-3">
+      <%= link_to pets_path do %>
+        <p><i class="fas fa-angle-left"></i> Home</p>
+      <% end %>
+     <h2 class="text-center pb-4">Add your pet</h2>
+    </div>
+  </div>
+</div>
+
+<div class="sf-outfit">
+  <%= render 'shared/simple_form' %>
+</div>

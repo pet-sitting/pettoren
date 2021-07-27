@@ -1,0 +1,107 @@
+.simple_form div.input {
+  width: 100vw;
+  margin-bottom: 30px;
+}
+
+.simple_form label {
+  float: left;
+  width: 300px;
+  text-align: left;
+  margin: 5px 5px;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.simple_form input {
+  background-color: #FCFCFD;
+  border-radius: 6px;
+  height: 45px;
+}
+
+.simple_form input[type='submit'] {
+  margin: 25px 7% 15px 7%;
+  width: 86%;
+  background-color: #11beae;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: .15s linear;
+}
+
+
+.upload-box {
+  border: 1px dashed #c2c8d2;
+  box-sizing: border-box;
+  min-height: 180px;
+  text-align: center;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  margin: 50px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#pet_pet_pics {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.file .required {
+  opacity: 0;
+}
+
+.upload-box p {
+  color: #a0a7b4;
+  font-size: 1.1em;
+}
+
+.upload-box i {
+  color: #a0a7b4;
+  font-size: 2em;
+}
+
+.preview-img {
+  width: 180px;
+  height: 200px;
+  border-radius: 3px;
+  border: 1px solid #c2c8d2;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 3px;
+}
+
+#preview_box {
+  padding: 10px;
+  opacity: 1;
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+
+@media (min-width: 300px) {
+  .sf-outfit {
+    background-color: white;
+    padding: 50px;
+    width:100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .sf-outfit {
+    background-color: white;
+    padding: 40px;
+    border-radius: 3px;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.1);
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+

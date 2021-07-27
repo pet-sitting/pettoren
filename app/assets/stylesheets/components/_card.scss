@@ -41,3 +41,38 @@
     font-size: 18px;
   }
 }
+
+.pet-details {
+  background-color: #F7EADE;
+  border-radius: 45px;
+  padding-bottom: 23px;
+  margin-top: 18px;
+
+}
+
+.pet-location {
+
+
+}
+
+.pet-description {
+
+
+}
+
+
+.flex {
+ display: flex;
+ justify-content: space-evenly;
+}
+
+
+.flex-inline {
+
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+padding: 44px;
+}
+
