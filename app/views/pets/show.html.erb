@@ -2,11 +2,62 @@
   <div class="show-card-wrapper">
     <div class="show-card" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path @pet.pet_pics.first.key%>')">
   </div>
+
+<ol class="carousel-indicators">
+   <% @pet.pet_pics.each_with_index do |photo, n| %>
+     <li data-target='#MyCarousel' data-slide-to="#{n}" class="#{'active' if n == 0}"></li>
+   <% end %>
+</ol>
+
+<div class="carousel-inner" role="listbox">
+  <div class="item active">
+    <%= cl_image_path @pet.pet_pics.first.key %>
+  </div>
+  <% @pet.pet_pics.drop(1).each do |photo| %>
+     <div class="item">
+       <img src="<%= cl_image_path photo.key %>" alt="">
+     </div>
+  <% end %>
+</div>
+
+
   <div class="carousel" style="border: 1px solid red;height: 360px;"></div>
-  <div class="pet-details-wrapper" style="border: 1px solid red;height: 200px;">
-    <div class="pet-details-column" style="border: 1px solid red;height: 200px;">
-        <h2><span><%= @pet.name %></span></h2>
+  <div class="pet-details-wrapper" style="border: 1px solid red;">
+    <div class="pet-details-column" style="border: 1px solid red;">
+      <div class="details-name-breed">
+        <h2><%= @pet.name %></h2>
+        <p><span>Breed: </span> <%= @pet.breed.capitalize %></p>
+      </div>
+      <div class="line"></div>
+      <div class="details-description">
+        <p><span>Description:</span></p>
+        <p><%= @pet.description %></p>
+      </div>
+      <div class="line"></div>
+      <div class="description-owner">
+        <p><span>Owner: </span> <%= User.find(@pet.user_id).name %></p>
+        <p><span>Address: </span> <%= User.find(@pet.user_id).address %></p>
+      </div>
+      <div class="line"></div>
+      <div class="pet-location">
+        <p><span>Location:</span></p>
+        <div id="map"
+          style="width: 100%; height: 400px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
     </div>
-    <div class="calendar" style="border: 1px solid red;height: 200px;"></div>
+    <div class="calendar" style="border: 1px solid red;">
+      <div class="flex-inline" style="position: sticky; top: 7rem;">
+        <h3>Check <%= @pet.name %>'s availablity!</h3>
+        <div class="booking-panel" >
+          <%= simple_form_for [@pet, @booking] do |f| %>
+            <x-calendar available-dates="<%= @pet_schedules %>" output-name="booking-dates" />
+            <%= f.submit "Woof", class: 'btn btn-outline-primary my-2 my-sm-0' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
