@@ -38,21 +38,27 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 
   function showImage(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
+    if (input.files) {
+      const preBox = document.getElementById('preview_box');
 
-      reader.onload = function (e) {
-        $('#your_preview_id')
-          .attr('src', e.target.result)
-          .width(150)
-          .height(200);
-      };
+      for (let file of input.files) {
+        var reader = new FileReader();
 
-      reader.readAsDataURL(input.files[0]);
+        reader.onload = function (e) {
+          const img = document.createElement("img");
+          img.src = e.target.result;
+          img.classList.add('preview-img');
+          preBox.appendChild(img);
+        };
+
+        reader.readAsDataURL(file);
+      }
     }
   }
 
   $('#pet_pet_pics').on('change', function() {
+    const preBox = document.getElementById('preview_box');
+    preBox.innerHTML = "";
     showImage(this);
-})
+  })
 });
