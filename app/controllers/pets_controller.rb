@@ -9,6 +9,11 @@ class PetsController < ApplicationController
   def index
     @pets = policy_scope(Pet)
     authorize @pets
+    if params[:query].present?
+      @pets = Pet.global_search(params[:query])
+    else
+      @pets = Pet.all
+    end
   end
 
   def show
