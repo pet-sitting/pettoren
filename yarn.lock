@@ -885,10 +885,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@ellie-xyb/multi-select-calendar@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@ellie-xyb/multi-select-calendar/-/multi-select-calendar-1.0.2.tgz#3163394d79affbfcf1ccbbd2fe1f37f206b45c5e"
-  integrity sha512-Af8kg99aj5cfTL7UwrH9H8W4sA842EQACDdGEep24QG7TDgEld/WqfZ9SljUd1xlMd8oBor8+0OdAi6lcJXTYQ==
+"@ellie-xyb/multi-select-calendar@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@ellie-xyb/multi-select-calendar/-/multi-select-calendar-1.1.0.tgz#49a07c333ef3981a0bf321c5f39db46cd9f0b2dc"
+  integrity sha512-HUEcfhowqPAG8PWyljD/5NafjIaWeHKZcl9J1UDfEemEf8tEnbWPo/QheVJ4KJtpuVDaNhCZNiVaL7cWDIwjQQ==
   dependencies:
     esbuild "^0.12.15"
     preact "^10.5.14"
