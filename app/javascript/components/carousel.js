@@ -6,8 +6,8 @@ const setCarousel = () => {
     thumbnail.addEventListener("click", (e) => {
       console.log(e)
       console.log(showCard)
-      // const picture_src = e.currentTarget.childNodes[1].src;
-      // showCard.style.backgroundImage = `url(${picture_src})`;
+      const picture_src = e.currentTarget.childNodes[1].src;
+      showCard.style.backgroundImage = `url(${picture_src})`;
     })
   })
 }

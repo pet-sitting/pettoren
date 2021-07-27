@@ -2,17 +2,17 @@
   <div class="show-card-wrapper">
     <div class="show-card" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path @pet.pet_pics.first.key%>')">
   </div>
-  <div class="carousel" style="border: 1px solid red;">
+  <div class="carousel">
     <div class="owl-carousel owl-theme">
-      <% @pet.pet_pics.each do |pet_pic| %>
-        <div class="item">
+      <% @pet.pet_pics.each_with_index do |pet_pic, index| %>
+        <div class="item" data-hash='<%= index %>'>
           <img src="<%= cl_image_path pet_pic.key %>" alt="photo">
         </div>
       <% end %>
     </div>
   </div>
-  <div class="pet-details-wrapper" style="border: 1px solid red;">
-    <div class="pet-details-column" style="border: 1px solid red;">
+  <div class="pet-details-wrapper">
+    <div class="pet-details-column">
       <div class="details-name-breed">
         <h2><%= @pet.name %></h2>
         <p><span>Breed: </span> <%= @pet.breed.capitalize %></p>
@@ -31,16 +31,15 @@
       <div class="pet-location">
         <p><span>Location:</span></p>
         <div id="map"
-          style="width: 100%; height: 400px;"
+          style="width: 100%; height: 400px; margin-top: 15px;"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
     </div>
-    <div class="calendar" style="border: 1px solid red;">
+    <div class="calendar">
       <div class="flex-inline" style="position: sticky; top: 7rem;">
-        <h3>Check <%= @pet.name %>'s availablity!</h3>
-        <div class="line"></div>
+        <h3>Check <%= @pet.name %>'s availability!</h3>
         <div class="booking-panel" >
           <%= simple_form_for [@pet, @booking] do |f| %>
             <x-calendar available-dates="<%= @pet_schedules %>" output-name="booking-dates" />

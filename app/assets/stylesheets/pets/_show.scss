@@ -12,6 +12,8 @@
 .pet-details-column {
   flex: 65%;
   padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   & p {
     margin-bottom: 0px;
     color: #333;
@@ -38,6 +40,13 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
+  & h3 {
+    background-color: #CCEABB;
+    padding: 10px;
+    border-radius: 15px 15px 0 0;
+    border-bottom: 3px solid rgb(215, 215, 215);
+    margin-bottom: 0;
+  }
 }
 
 .details-name-breed h2 {

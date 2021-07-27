@@ -39,7 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   filterPets();
   initMapbox();
-  setCarousel();
 
   $('.owl-carousel').owlCarousel({
     loop: true,
@@ -55,7 +54,6 @@ document.addEventListener('turbolinks:load', () => {
         items: 4
       }
     },
-    nav: true,
-    navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"]
   })
+  setCarousel();
 });
