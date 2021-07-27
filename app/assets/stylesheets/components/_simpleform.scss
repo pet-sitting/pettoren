@@ -85,3 +85,23 @@
   justify-content: flex-start;
 }
 
+
+@media (min-width: 300px) {
+  .sf-outfit {
+    background-color: white;
+    padding: 50px;
+    width:100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .sf-outfit {
+    background-color: white;
+    padding: 40px;
+    border-radius: 3px;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.1);
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
