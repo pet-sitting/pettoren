@@ -8,7 +8,6 @@ class PetSchedulesController < ApplicationController
 
   def create
     @schedule = PetSchedule.new(schedule_params)
-    @schedule.user = current_user
     if @schedule.save
       redirect_to pet_path(@pet)
     else
@@ -20,6 +19,6 @@ class PetSchedulesController < ApplicationController
   private
 
   def schedule_params
-    params.require(:pet_schedule).permit(%i[pet date])
+    params.require(:pet_schedule).permit(%i[pet_id date])
   end
 end
