@@ -1,38 +1,53 @@
-   <div class="wrapper">
-      <section class="hero" style="background-image: url(<%= asset_path 'pets_banner.jpg' %>)">
-        <div class="inner" id="banner-text">
-          <div class="clipper">
-            <h1>Become a pettsitter!</h1>
-          </div>
-          <div class="anim-panel">
-            <p>
-              Do you want to take care of a cute dog? <br> How about playing for a few hours with a cat?
-            </p>
-            <%= link_to "Find a pet!", pets_path, class: "btn btn-primary" %>
-          </div>
-        </div>
-      </section>
-      <section class="sidebar">
-        <div class="inner">
-          <div class="clipper">
-            <h2>About us</h2>
-          </div>
-          <div class="anim-panel">
-            <p>
-              <u>Pettoren</u> is an app for put lovers, who can own a pet. If you want to find yourself a cute, fluffy (or scally) friend, please check out our app. It's full of pets waiting for you the thier next babysitter!
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="Register">
-        <div class="inner">
-          <div class="clipper">
-            <h2>Register</h2>
-          </div>
-          <div class="anim-panel">
-            <p>Register to check all the pets in your area!</p>
-            <%= link_to "Register now!", new_user_registration_path, class: "btn btn-primary" %>
-          </div>
-        </div>
-      </section>
+<%# <div class="wrapper">
+  <div class="inner" id="banner-text">
+    <div class="clipper">
+      <h1>Become a pettsitter!</h1>
     </div>
+    <div class="anim-panel">
+      <p>
+        Do you want to take care of a cute dog? <br> How about playing for a few hours with a cat?
+      </p>
+    </div>
+  </div>
+</section>
+<section class="sidebar">
+  <div class="inner">
+    <div class="clipper">
+      <h2>About us</h2>
+    </div>
+    <div class="anim-panel">
+      <p>
+        <u>Pettoren</u> is an app for put lovers, who can own a pet. If you want to find yourself a cute, fluffy (or scally) friend, please check out our app. It's full of pets waiting for you the thier next babysitter!
+      </p>
+    </div>
+  </div>
+</section>
+<section class="Register">
+  <div class="inner">
+    <div class="clipper">
+      <h2>Register</h2>
+    </div>
+    <div class="anim-panel">
+      <p>Register to check all the pets in your area!</p>
+    </div>
+  </div>
+</section>
+</div> %>
+<div class="parallax" style="background-image: url(<%= asset_path 'pets_banner.jpg' %>)">
+  <div class="banner-content animated fadeInUp">
+    <div class="banner-text">
+      <h1>Become a petsitter!</h1>
+      <p>
+        Do you want to take care of a cute dog? <br> How about playing for a few hours with a cat?
+      </p>
+    </div>
+    <div class="div">
+      <div class="bannrer-cta">
+        <%= link_to "Find a pet!", pets_path %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 d-flex align-self-stretch px-4 animated fadeInUp"></div>
+</div>
