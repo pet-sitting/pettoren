@@ -3,7 +3,6 @@ const filterPets = () => {
   const petCards = document.querySelectorAll(".pet-card");
   filters.forEach((filter) => {
     filter.addEventListener("click", (e) => {
-      console.log(e)
       petCards.forEach((petCard) => {
         petCard.hidden = true;
         if (petCard.dataset.species === e.currentTarget.id) {

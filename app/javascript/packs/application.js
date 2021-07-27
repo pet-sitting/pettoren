@@ -26,10 +26,13 @@ require("@ellie-xyb/multi-select-calendar");
 // External imports
 import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { filterPets } from "../components/filters";
 import { initMapbox } from '../plugins/init_mapbox';
+import { setCarousel } from '../components/carousel';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -61,4 +64,21 @@ document.addEventListener('turbolinks:load', () => {
     preBox.innerHTML = "";
     showImage(this);
   })
+
+  $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 4
+      }
+    },
+  })
+  setCarousel();
 });
