@@ -1,39 +1,4 @@
-<%# <div class="wrapper">
-  <div class="inner" id="banner-text">
-    <div class="clipper">
-      <h1>Become a pettsitter!</h1>
-    </div>
-    <div class="anim-panel">
-      <p>
-        Do you want to take care of a cute dog? <br> How about playing for a few hours with a cat?
-      </p>
-    </div>
-  </div>
-</section>
-<section class="sidebar">
-  <div class="inner">
-    <div class="clipper">
-      <h2>About us</h2>
-    </div>
-    <div class="anim-panel">
-      <p>
-        <u>Pettoren</u> is an app for put lovers, who can own a pet. If you want to find yourself a cute, fluffy (or scally) friend, please check out our app. It's full of pets waiting for you the thier next babysitter!
-      </p>
-    </div>
-  </div>
-</section>
-<section class="Register">
-  <div class="inner">
-    <div class="clipper">
-      <h2>Register</h2>
-    </div>
-    <div class="anim-panel">
-      <p>Register to check all the pets in your area!</p>
-    </div>
-  </div>
-</section>
-</div> %>
-<div class="parallax" style="background-image: url(<%= asset_path 'pets_banner.jpg' %>)">
+<div class="parallax" style="background-image: url(<%= asset_path 'parallax_bg.jpg' %>)">
   <div class="banner-content animated fadeInUp">
     <div class="banner-text">
       <h1>Become a petsitter!</h1>
@@ -48,6 +13,76 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-4 d-flex align-self-stretch px-4 animated fadeInUp"></div>
+<div style="height: 300px; border: 1px solid red"></div>
+<div class="about-wrapper" style="border: 1px solid red">
+  <div class="about-left">
+    <%= image_tag(asset_path 'pets_group.png') %>
+  </div>
+  <div class="about-right">
+    <h2>Why Pettoren?</h2>
+    <div class="services-wrapper">
+      <div class="service">
+        <div class="icon-wrapper">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <%= image_tag(asset_path 'nearby.png') %>
+          </div>
+        </div>
+        <div class="text">
+          <h4>Find nearby pets</h4>
+          <p>Find pets using search bar, filters or distace sliders. You are we find new friend for sure!</p>
+        </div>
+      </div>
+      <div class="service">
+        <div class="icon-wrapper">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <%= image_tag(asset_path 'pet.png') %>
+          </div>
+        </div>
+        <div class="text">
+          <h4>Choose the pet</h4>
+          <p>Learn more about the pet and it's availability. Check out all the cute photos too!</p>
+        </div>
+      </div>
+      <div class="service">
+      <div class="icon-wrapper">
+        <div class="icon d-flex align-items-center justify-content-center">
+          <%= image_tag(asset_path 'booking.png') %>
+        </div>
+      </div>
+        <div class="text">
+          <h4>Book your pet</h4>
+          <p>Book the pet you like according to your schedule. Don't worry, you will find an open day.</p>
+        </div>
+      </div>
+      <div class="service">
+        <div class="icon-wrapper">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <%= image_tag(asset_path 'dashboard-interface.png') %>
+          </div>
+        </div>
+        <div class="text">
+          <h4>Manage booking</h4>
+          <p>Check the status of your booking in your dashboard. Is your booking still pending?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="statistics">
+  <div class="stat">
+    <div class="stat-number"><span id="user-count" data-count="<%= User.count %>"></span></div>
+    <div class="stat-text">Users</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number"> <span id="pet-count" data-count="<%= Pet.count %>"></span></div>
+    <div class="stat-text">Pets</div>
+  </div>
+  <div class="stat">
+    <% pics_number = 0 %>
+    <% Pet.all.each do |pet| %>
+    <% pics_number += pet.pet_pics.count %>
+    <% end %>
+    <div class="stat-number"><span id="pic-count" data-count=" <%= pics_number %> "></span></div>
+    <div class="stat-text">Pets pictures</div>
+  </div>
 </div>

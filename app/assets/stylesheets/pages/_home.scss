@@ -127,6 +127,7 @@
 //             align-items: center;
 //   }
 // }
+$mint-green: #CCEABB;
 
 .parallax {
   // background-image: url("../../images/pets_banner.jpg");
@@ -135,7 +136,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: "Nunito", "Helvetica", "sans-serif";
 }
 
 .banner-content {
@@ -152,6 +152,82 @@
   }
   & p {
     font-size: 36px;
+  }
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+.about-right {
+  margin-left: 50px;
+  & h2 {
+    font-weight: 800;
+    margin-bottom: 40px;
+    font-size: 40px;
+  }
+  & h4 {
+    font-size: 24px;
+  }
+  & p {
+    font-size: 16px;
+    color: #333;
+  }
+}
+
+.services-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px 40px;
+  & .service {
+    display: flex;
+    width: 260px;
+  }
+  & img {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.icon-wrapper .icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: $mint-green;
+  box-shadow: 0px 10px 30px -4px rgba(0, 0, 0, 0.15);
+  margin-right: 15px;
+}
+
+.service h4 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.statistics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  background-color: $mint-green;
+  & .stat {
+    margin-right: 8rem;
+    text-align: center;
+  }
+}
+
+.stat {
+  & .stat-number {
+    line-height: 1;
+    font-weight: 700;
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  & .stat-text {
+    font-size: 26px;
   }
 }
 
