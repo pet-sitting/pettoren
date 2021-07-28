@@ -50,17 +50,6 @@
 
 }
 
-.pet-location {
-
-
-}
-
-.pet-description {
-
-
-}
-
-
 .flex {
  display: flex;
  justify-content: space-evenly;
@@ -76,28 +65,31 @@ justify-content: center;
 padding: 44px;
 }
 
-.card-product {
-  overflow: hidden;
-  min-height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin-bottom: 50px;
-}
+
 
 @media (min-width: 300px) {
-  .card-product img {
+  .petcard-for-schedule {
+      overflow: hidden;
+      height: 120px;
+      background: white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+
+  .petcard-for-schedule img {
     height: 100%;
     width: 120px;
+    border-radius: 3px;
     object-fit: cover;
   }
 
-  .card-product .card-product-infos {
+  .petcard-for-schedule .petcard-for-schedule-infos {
     padding: 16px;
   }
 
-  .card-product p {
+  .petcard-for-schedule p {
     font-size: 12px;
     line-height: 1.4;
     opacity: .7;
@@ -105,7 +97,7 @@ padding: 44px;
     margin-top: 8px;
   }
 
-  .card-product h2 {
+  .petcard-for-schedule h2 {
     font-size: 16px;
     font-weight: bold;
     margin: 0;
@@ -113,13 +105,25 @@ padding: 44px;
 }
 
 @media (min-width: 992px) {
-  .card-product img {
+  .petcard-for-schedule {
+      overflow: hidden;
+      height: 480px;
+      background: white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      margin-bottom: 50px;
+      border-radius: 1px;
+    }
+
+  .petcard-for-schedule img {
     height: 100%;
     width: 100%;
+    border-radius: 3px;
     object-fit: cover;
   }
 
-  .card-product-infos {
+  .petcard-for-schedule-infos {
     display: none;
   }
 }
