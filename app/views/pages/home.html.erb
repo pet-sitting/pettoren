@@ -88,7 +88,7 @@
     </div>
   </div>
 </div>
-<div class="parallax-reviews" style="background-image: url(<%= asset_path 'parallax_reviews.jpg' %>)">
+<div class="parallax-reviews" style="background-image: url(<%= asset_path 'review_bg.jpg' %>)">
   <div class="container">
     <div class="review-section">
       <div class="review-title">
@@ -154,7 +154,7 @@
       <% @pets.each do |pet| %>
         <% if pet.pet_pics.attached? %>
           <%= link_to pet_path(pet[:id]) do %>
-            <div class="pet-card gallery" data-species="<%= pet.species %>" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path pet.pet_pics.first.key%>')">
+            <div class="pet-card gallery" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path pet.pet_pics.sample.key%>')">
               <div class="pet-info-wrapper gallery">
                 <div class="pet-info gallery">
                   <h4><%= pet.name %></h4>
