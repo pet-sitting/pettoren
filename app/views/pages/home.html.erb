@@ -6,17 +6,17 @@
         Do you want to take care of a cute dog? <br> How about playing for a few hours with a cat?
       </p>
     </div>
-    <div class="div">
-      <div class="bannrer-cta">
+    <div class="cta-wrapper">
+      <div class="banner-cta">
         <%= link_to "Find a pet!", pets_path %>
       </div>
     </div>
   </div>
 </div>
-<div style="height: 300px; border: 1px solid red"></div>
-<div class="about-wrapper" style="border: 1px solid red">
+<div class="about-wrapper">
   <div class="about-left">
     <%= image_tag(asset_path 'pets_group.png') %>
+    <div class="circle"></div>
   </div>
   <div class="about-right">
     <h2>Why Pettoren?</h2>
@@ -29,7 +29,7 @@
         </div>
         <div class="text">
           <h4>Find nearby pets</h4>
-          <p>Find pets using search bar, filters or distace sliders. You are we find new friend for sure!</p>
+          <p>Find pets using search bar, filters or distace sliders. You will find a new friend for sure!</p>
         </div>
       </div>
       <div class="service">
@@ -68,21 +68,104 @@
     </div>
   </div>
 </div>
-<div class="statistics">
-  <div class="stat">
-    <div class="stat-number"><span id="user-count" data-count="<%= User.count %>"></span></div>
-    <div class="stat-text">Users</div>
-  </div>
-  <div class="stat">
-    <div class="stat-number"> <span id="pet-count" data-count="<%= Pet.count %>"></span></div>
-    <div class="stat-text">Pets</div>
-  </div>
-  <div class="stat">
-    <% pics_number = 0 %>
-    <% Pet.all.each do |pet| %>
-    <% pics_number += pet.pet_pics.count %>
-    <% end %>
-    <div class="stat-number"><span id="pic-count" data-count=" <%= pics_number %> "></span></div>
-    <div class="stat-text">Pets pictures</div>
+<div class="statistics-wrapper d-flex align-items-center justify-content-center">
+  <div class="statistics">
+    <div class="stat">
+      <div class="stat-number"> <span id="pet-count" data-count="<%= Pet.count %>"></span></div>
+      <div class="stat-text">Pets</div>
+    </div>
+    <div class="stat">
+      <% pics_number = 0 %>
+      <% Pet.all.each do |pet| %>
+      <% pics_number += pet.pet_pics.count %>
+      <% end %>
+      <div class="stat-number"><span id="pic-count" data-count=" <%= pics_number %> "></span></div>
+      <div class="stat-text">Pets pictures</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number"><span id="user-count" data-count="<%= User.count %>"></span></div>
+      <div class="stat-text">Users</div>
+    </div>
   </div>
 </div>
+<div class="parallax-reviews" style="background-image: url(<%= asset_path 'parallax_reviews.jpg' %>)">
+  <div class="container">
+    <div class="review-section">
+      <div class="review-title">
+        <h2>Happy Petsitters</h2>
+      </div>
+      <div class="carousel-wrapper">
+        <div class="carousel">
+          <div class="owl-carousel owl-theme">
+            <div class="item" id="item-review">
+              <div class="review-wrapper">
+                <p>I found a cute buddy thanks to Pettoren. I'm playing with him every Saturday!</p>
+                <div class="review-user">
+                  <img src="" alt="avatar">
+                  <div class="name"></div>
+                </div>
+              </div>
+            </div>
+            <div class="item" id="item-review">
+              <div class="review-wrapper">
+                <p>My apartment is not alowing pets. Then I've discovered this website. I can find a pet to rent wiht just a few clicks.</p>
+                <div class="review-user">
+                  <img src="" alt="avatar">
+                  <div class="name"></div>
+                </div>
+              </div>
+            </div>
+            <div class="item" id="item-review">
+              <div class="review-wrapper">
+                <p>I always wanted to have an animal, but I can't afford to have one. I was looking for a solution to my problem and found Pettoren.</p>
+                <div class="review-user">
+                  <img src="" alt="avatar">
+                  <div class="name"></div>
+                </div>
+              </div>
+            </div>
+            <div class="item" id="item-review">
+              <div class="review-wrapper">
+                <p>As an owner of a long cat T-shirt I wanted to find a real cat to play with. Now I can!</p>
+                <div class="review-user">
+                  <img src="" alt="avatar">
+                  <div class="name"></div>
+                </div>
+              </div>
+            </div>
+            <div class="item" id="item-review">
+              <div class="review-wrapper">
+                <p>I used to have a lot of pets, but since I moved to Japan I can't even own a hamster. With pettoren I can play with lots a of pets.</p>
+                <div class="review-user">
+                  <img src="" alt="avatar">
+                  <div class="name"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container gallery">
+  <h2>Pets gallery</h2>
+  <div class="pets-all-list">
+      <% @pets.each do |pet| %>
+        <% if pet.pet_pics.attached? %>
+          <%= link_to pet_path(pet[:id]) do %>
+            <div class="pet-card gallery" data-species="<%= pet.species %>" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path pet.pet_pics.first.key%>')">
+              <div class="pet-info-wrapper gallery">
+                <div class="pet-info gallery">
+                  <h4><%= pet.name %></h4>
+                  <p><%= pet.breed %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+</div>
+
+<div style="height: 1000px"></div>
+
