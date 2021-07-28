@@ -96,49 +96,64 @@
       </div>
       <div class="carousel-wrapper">
         <div class="carousel">
-          <div class="owl-carousel owl-theme">
-            <div class="item" id="item-review">
+          <div class="owl-review owl-carousel owl-theme">
+            <div class="item">
               <div class="review-wrapper">
+                <div class="quote-icon d-flex align-items-center justify-content-center">
+                  <img id="quote-icon-1" src=" <%= asset_path 'left-quote.png' %> " alt="">
+                </div>
                 <p>I found a cute buddy thanks to Pettoren. I'm playing with him every Saturday!</p>
                 <div class="review-user">
-                  <img src="" alt="avatar">
-                  <div class="name"></div>
+                  <img id="av1" class="review-avatar" src=" <%= asset_path 'users/selim.jpg' %> " alt="avatar">
+                  <div class="review-name">Selim Begag</div>
                 </div>
               </div>
             </div>
-            <div class="item" id="item-review">
+            <div class="item">
               <div class="review-wrapper">
+                <div class="quote-icon d-flex align-items-center justify-content-center">
+                  <img id="quote-icon-2" src=" <%= asset_path 'left-quote.png' %> " alt="">
+                </div>
                 <p>My apartment is not alowing pets. Then I've discovered this website. I can find a pet to rent wiht just a few clicks.</p>
                 <div class="review-user">
-                  <img src="" alt="avatar">
-                  <div class="name"></div>
+                  <img id="av2" class="review-avatar" src=" <%= asset_path 'users/piotr.jpg' %> " alt="avatar">
+                  <div class="review-name">Piotr Polanski</div>
                 </div>
               </div>
             </div>
-            <div class="item" id="item-review">
+            <div class="item">
               <div class="review-wrapper">
+                <div class="quote-icon d-flex align-items-center justify-content-center">
+                  <img id="quote-icon-3" src=" <%= asset_path 'left-quote.png' %> " alt="">
+                </div>
                 <p>I always wanted to have an animal, but I can't afford to have one. I was looking for a solution to my problem and found Pettoren.</p>
                 <div class="review-user">
-                  <img src="" alt="avatar">
-                  <div class="name"></div>
+                  <img id="av3" class="review-avatar" src=" <%= asset_path 'users/ellie.jpg' %> " alt="avatar">
+                  <div class="review-name">Ellie Xu</div>
                 </div>
               </div>
             </div>
-            <div class="item" id="item-review">
+            <div class="item">
               <div class="review-wrapper">
+                <div class="quote-icon d-flex align-items-center justify-content-center">
+                  <img id="quote-icon-4" src=" <%= asset_path 'left-quote.png' %> " alt="">
+                </div>
                 <p>As an owner of a long cat T-shirt I wanted to find a real cat to play with. Now I can!</p>
                 <div class="review-user">
-                  <img src="" alt="avatar">
-                  <div class="name"></div>
+                  <img id="av4" class="review-avatar" src=" <%= asset_path 'users/yann.jpg' %> " alt="avatar">
+                  <div class="review-name">Yann Klein</div>
                 </div>
               </div>
             </div>
-            <div class="item" id="item-review">
+            <div class="item">
               <div class="review-wrapper">
+                <div class="quote-icon d-flex align-items-center justify-content-center">
+                  <img id="quote-icon-5" src=" <%= asset_path 'left-quote.png' %> " alt="">
+                </div>
                 <p>I used to have a lot of pets, but since I moved to Japan I can't even own a hamster. With pettoren I can play with lots a of pets.</p>
                 <div class="review-user">
-                  <img src="" alt="avatar">
-                  <div class="name"></div>
+                  <img id="av5" class="review-avatar" src=" <%= asset_path 'users/doug.jpg' %> " alt="avatar">
+                  <div class="review-name">Doug Berkley</div>
                 </div>
               </div>
             </div>
@@ -151,21 +166,19 @@
 <div class="container gallery">
   <h2>Pets gallery</h2>
   <div class="pets-all-list">
-      <% @pets.each do |pet| %>
-        <% if pet.pet_pics.attached? %>
-          <%= link_to pet_path(pet[:id]) do %>
-            <div class="pet-card gallery" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path pet.pet_pics.sample.key%>')">
-              <div class="pet-info-wrapper gallery">
-                <div class="pet-info gallery">
-                  <h4><%= pet.name %></h4>
-                  <p><%= pet.breed %></p>
-                </div>
+    <% @pets.each do |pet| %>
+      <% if pet.pet_pics.attached? %>
+        <%= link_to pet_path(pet[:id]) do %>
+          <div class="pet-card gallery" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path pet.pet_pics.sample.key%>')">
+            <div class="pet-info-wrapper gallery">
+              <div class="pet-info gallery">
+                <h4><%= pet.name %></h4>
+                <p><%= pet.breed %></p>
               </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
       <% end %>
+    <% end %>
+  </div>
 </div>
-
-<div style="height: 1000px"></div>
-
