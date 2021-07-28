@@ -12,9 +12,17 @@
     <div class="col-12 col-lg-9">
       <div class="dashboard-content">
         <div class="content-titles" >
-          <h5>Pets</h5>
-          <h5>Bookings</h5>
-          <h5>Booking requests</h5>
+          <%= link_to dashboard_pets_path do %>
+            <h5>Pets</h5>
+          <% end %>
+          <%= link_to dashboard_bookings_path do %>
+            <h5>Bookings</h5>
+          <% end %>
+          <%= link_to dashboard_requests_path do %>
+            <h5>Booking requests</h5>
+          <% end %>
+        </div>
+        <div class="content-pets">
         </div>
       </div>
     </div>
