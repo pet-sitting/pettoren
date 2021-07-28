@@ -40,6 +40,31 @@ document.addEventListener('turbolinks:load', () => {
   filterPets();
   initMapbox();
 
+  function showImage(input) {
+    if (input.files) {
+      const preBox = document.getElementById('preview_box');
+
+      for (let file of input.files) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          const img = document.createElement("img");
+          img.src = e.target.result;
+          img.classList.add('preview-img');
+          preBox.appendChild(img);
+        };
+
+        reader.readAsDataURL(file);
+      }
+    }
+  }
+
+  $('#pet_pet_pics').on('change', function() {
+    const preBox = document.getElementById('preview_box');
+    preBox.innerHTML = "";
+    showImage(this);
+  })
+
   $('.owl-carousel').owlCarousel({
     loop: true,
     margin: 10,
