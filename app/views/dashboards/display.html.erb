@@ -33,7 +33,18 @@
   <div class="row">
     <div class="col-12 col-lg-9 offset-lg-4">
       <div class="content-pets">
-        <p>hello</p>
+        <% if @user.pets %>
+          <% @user.pets.each do |pet| %>
+            <div class="my-pets-card">
+
+            </div>
+          <% end %>
+
+        <% else %>
+
+          <p>HI</p>
+          <%= link_to "➕Add", new_pet_path %>
+        <% end %>
       </div>
     </div>
   </div>

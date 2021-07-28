@@ -36,6 +36,7 @@
     border-radius: 6px;
     display: flex;
     justify-content: center;
+    min-height: 600px;
   }
 }
 
@@ -68,6 +69,17 @@
     height: 92px;
     padding-left: 136px;
     align-items: flex-end;
+  }
+
+  .content-container {
+    width: 53%;
+    max-height: 100vh;
+    margin-top: -170px;
+    margin-right: 6vw;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
   }
 }
 
