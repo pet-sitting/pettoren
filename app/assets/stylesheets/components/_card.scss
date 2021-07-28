@@ -48,8 +48,6 @@
   padding-bottom: 23px;
   margin-top: 18px;
 
-}
-
 .flex {
  display: flex;
  justify-content: space-evenly;
@@ -57,15 +55,75 @@
 
 
 .flex-inline {
-
-display: flex;
-flex-wrap: wrap;
-align-items: center;
-justify-content: center;
-padding: 44px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 44px;
 }
 
+@keyframes layout {
 
+ 0% {
+
+   filter: grayscale(20%);
+   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+ }
+ 100% {
+   filter: grayscale(0%);
+   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+
+ }
+
+}
+
+.filter {
+
+ filter: grayscale(20%);
+
+ & h4 {
+  text-shadow: 2px 2px 4px black;
+
+ }
+
+ & p {
+
+  text-shadow: 2px 2px 4px black;
+
+ }
+
+ & i {
+
+  text-shadow: 2px 2px 4px black;
+
+ }
+
+}
+
+.filter:hover {
+animation: layout 0.2s linear;
+filter: grayscale(0%);
+transition: 0.2s ease-out;
+transform: translateY(-8px);
+box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+ & h4 {
+  text-shadow: 2px 2px 1px black;
+
+ }
+
+ & p {
+  text-shadow: 2px 2px 1px black;
+
+ }
+
+  & i {
+
+  text-shadow: 2px 2px 1px black;
+
+ }
+}
+=======
 
 @media (min-width: 300px) {
   .petcard-for-schedule {
@@ -127,8 +185,4 @@ padding: 44px;
     display: none;
   }
 }
-
-
-
-
 

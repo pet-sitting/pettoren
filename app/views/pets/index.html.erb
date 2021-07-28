@@ -71,7 +71,7 @@
       <% @pets.each do |pet| %>
         <% if pet.pet_pics.attached? %>
           <%= link_to pet_path(pet[:id]) do %>
-            <div class="pet-card" data-species="<%= pet.species %>" style="background-position: center;background-size: cover;background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pet.pet_pics.first.key%>')">
+            <div class="pet-card filter" data-species="<%= pet.species %>" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path pet.pet_pics.first.key%>');">
               <div class="pet-info-wrapper">
                 <div class="pet-info">
                   <h4><%= pet.name %></h4>
