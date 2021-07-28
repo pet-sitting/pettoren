@@ -5,6 +5,13 @@ const counter = () => {
   const petCount = document.getElementById("pet-count");
   const picCount = document.getElementById("pic-count");
 
+  // window.onscroll = function () {
+  //   let scrolled = window.pageYOffset || document.documentElement.scrollTop;
+  //   if (scrolled >= 750) {
+  //     console.log("test1");
+  //   }
+  // }
+
   if (userCount !== null && petCount !== null && picCount !== null) {
     const countUser = new CountUp('user-count', userCount.dataset.count);
     if (!countUser.error) {
