@@ -1,0 +1,37 @@
+<% if policy(PetSchedule).create? %>
+  <%= link_to "Add available dates", new_pet_pet_schedule_path(:pet_id) %>
+<% end %>
+<div class="w-100 d-none d-lg-block">
+  <div class="mt-5">
+    <div class="p-3">
+      <div class="col-lg-6 offset-lg-3">
+        <%= link_to "Add your pet", new_pet_path %>
+        <i class="fas fa-angle-right"></i><span> Add available dates</span>
+        <h2>Add available dates</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w-100 d-block d-lg-none">
+  <div class="mt-5">
+    <div class="p-3">
+      <%= link_to new_pet_path do %>
+        <p><i class="fas fa-angle-left"></i> Add your pet</p>
+      <% end %>
+     <h2 class="text-center pb-4">Add available dates</h2>
+    </div>
+  </div>
+</div>
+
+<div class="sf-outfit-schedule">
+  <div class="petcard-for-schedule">
+  <% @pet=Pet.find(params[:pet_id])  %>
+  <%= cl_image_tag @pet.pet_pics.first.key, height: 400, width: 400, crop: :fill %>
+    <div class="petcard-for-schedule-infos">
+      <h2><%= @pet.name %>(<%= @pet.breed %>)</h2>
+      <p><%= @pet.description %></p>
+    </div>
+  </div>
+  <%= render 'shared/simple_form_for_schedule' %>
+</div>
