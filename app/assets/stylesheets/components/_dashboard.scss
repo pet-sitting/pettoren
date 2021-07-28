@@ -21,6 +21,12 @@
     box-shadow: 0 0 5px lightgrey;
     overflow: hidden;
   }
+
+  .dashboard-content {
+    display: flex;
+    height: 92px;
+    align-items: flex-end;
+  }
 }
 
 @media (min-width: 992px) {
@@ -45,6 +51,14 @@
   .dashboard-user h3{
     line-height: 24px;
   }
+
+  .dashboard-content {
+    display: flex;
+    height: 92px;
+    padding-left: 136px;
+    align-items: flex-end;
+
+  }
 }
 
 .user-avatar {
@@ -56,4 +70,6 @@
   display: flex;
   max-width: 600px;
   justify-content: space-around;
+  align-items: flex-end;
+  flex-grow: 1;
 }
