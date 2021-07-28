@@ -28,6 +28,15 @@
     height: 92px;
     align-items: flex-end;
   }
+
+  .content-container {
+    width: 90%;
+    margin: 40px auto;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media (min-width: 992px) {
@@ -73,4 +82,6 @@
   justify-content: space-around;
   align-items: flex-end;
   flex-grow: 1;
+  margin: 0 auto;
 }
+
