@@ -3,7 +3,7 @@
     <div class="show-card" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path @pet.pet_pics.first.key%>')">
   </div>
   <div class="carousel">
-    <div class="owl-carousel owl-theme">
+    <div class="owl-thumbnails owl-carousel owl-theme">
       <% @pet.pet_pics.each_with_index do |pet_pic, index| %>
         <div class="item" data-hash='<%= index %>'>
           <img src="<%= cl_image_path pet_pic.key %>" alt="photo">
