@@ -42,14 +42,20 @@
     // border-radius: 6px;
     display: flex;
     justify-content: center;
-    height: 100px;
+    height: 60px;
     overflow: hidden;
     min-height: 400px;
     background: #F7F7F7;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    display: flex;
     align-items: center;
     border-radius: 3px;
+  }
+
+  .my-pets-card-title {
+    width: 75%;
+    margin: 20px auto;
+    display: flex;
+    overflow: hidden;
   }
 
   .my-pets-card-add {
@@ -138,9 +144,19 @@
     // justify-content: start;
   }
 
+  .my-pets-card-title {
+    max-width: 70%;
+    margin-top: -120px;
+    margin-bottom: 140px;
+    margin-left: 25vw;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
   .my-pets-card {
     max-width: 70%;
-    min-height: 350px;
+    max-height: 380px;
     margin-top: -120px;
     margin-bottom: 190px;
     margin-left: 42vw;
@@ -151,7 +167,6 @@
     overflow: hidden;
     background: #F7F7F7;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    display: flex;
   }
 
   .my-pets-card-add {
@@ -172,4 +187,11 @@
   height: 100%;
 }
 
+.subtitle {
+  font-weight: bold;
+  color: #F7F7F7;
+  -webkit-text-stroke-width: 1.3px;
+  -webkit-text-stroke-color: #3F3F44;
+  padding-bottom: 20px;
+}
 

@@ -38,6 +38,9 @@
             <%= link_to "➕ Add pet", new_pet_path %>
           </div>
         <% else %>
+          <div class="my-pets-card-title">
+            <h1 class="subtitle">My pets</h1>
+          </div>
           <% @user.pets.each do |pet| %>
             <div class="my-pets-card">
               <%= cl_image_tag pet.pet_pics.first.key, crop: :fill %>
@@ -56,6 +59,7 @@
 
   <div class="collapse" id="collapsebookings">
     <div class="container">
+      <h1 class="subtitle">My bookings</h1>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <% unless @bookings.empty? %>
           <% @bookings.each do |booking| %>
