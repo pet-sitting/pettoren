@@ -26,12 +26,10 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    unless @booking.update(status: params[:status].to_i)
+    unless @booking.update(status: params[:booking][:status].to_i)
       flash.alert = "Failed change."
-      puts 'ai'
-    else
-      puts 'haha'
     end
+    redirect_to dashboard_path
     authorize @booking
   end
 end
