@@ -4,7 +4,7 @@
     border-bottom: thin solid lightgrey;
   }
 
-  .dashboard-uqer {
+  .dashboard-user {
     display: flex;
     align-items: center;
     color: #3F3F44;
@@ -24,8 +24,8 @@
   }
 
   .content-pets {
-    width: 100vw;
-    left: 0;
+    // width: 100vw;
+    // left: 0;
   }
 
   .content-titles {
@@ -133,16 +133,17 @@
   }
 
   .content-pets {
-    width: 100vw;
-    left: 0;
+    // width: 80%;
+    // display: flex;
+    // justify-content: start;
   }
 
   .my-pets-card {
-    max-width: 50vw;
+    max-width: 70%;
     min-height: 350px;
     margin-top: -120px;
     margin-bottom: 190px;
-    margin-left: 8vw;
+    margin-left: 42vw;
     border: 1px solid #e1e4e8;
     border-radius: 6px;
     display: flex;
@@ -154,14 +155,15 @@
   }
 
   .my-pets-card-add {
-    margin-right: 400px;
+    margin-top: -140px;
+    margin-left: 45vw;
     width: 500px;
     border: 1px solid #e1e4e8;
     border-radius: 3px;
     display: flex;
     justify-content: center;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
   }
 }
 
