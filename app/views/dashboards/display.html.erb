@@ -32,7 +32,7 @@
 <div class="content-container">
   <div class="row">
     <div class="col-12 col-lg-9">
-      <div class="content-pets"  id="collapsepets">
+      <div class="content-pets collapse"  id="collapsepets">
         <% if @user.pets.empty? %>
           <div class="my-pets-card-add">
             <%= link_to "➕ Add pet", new_pet_path %>
@@ -52,14 +52,26 @@
       </div>
     </div>
   </div>
-  <div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
   </div>
-  </div>
+
   <div class="collapse" id="collapsebookings">
-    <div class="card card-body">
-      aa
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <% unless @bookings.empty? %>
+          <% @bookings.each do |booking| %>
+            <div class="col pb-3">
+              <div class="card h-100 border-dark">
+                <div class="card-header text-secondary">Booked <%= link_to booking.pet.name, pet_path(booking.pet) %> at: <%= booking.created_at %></div>
+                <%= cl_image_tag booking.pet.pet_pics.first.key, class: :"card-img-top", crop: :fill %>
+                <div class="card-body">
+                  <p class="card-text">Address: <%= booking.pet.user.address %></p>
+                  <h4 class="card-title">Booking date: <%= booking.date %></h4>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

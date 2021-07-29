@@ -3,6 +3,7 @@ class DashboardsController < ApplicationController
 
   def display
     @pets = @user.pets
+    @bookings = @user.bookings_as_sitter
   end
 
   private
