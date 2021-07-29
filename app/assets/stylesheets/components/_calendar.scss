@@ -49,12 +49,15 @@
   border-radius: 3px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .cell-active {
-  background-color: #80c985;
+  background-color: #CCEABB;
   border-radius: 50%;
-  color: white;
+  color: #0E0000;
+  text-shadow: 1px 1px grey;
+  border: 1px solid #8080804a;
 }
 
 .cell-unavailable {
