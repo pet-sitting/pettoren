@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
       @booking = Booking.new(pet_id: params[:pet_id])
       @booking.date = Date.parse(date)
       @booking.sitter = current_user
+      @booking.status = 0
       render :show unless @booking.save
     end
     if params[:"booking-dates"].empty?
