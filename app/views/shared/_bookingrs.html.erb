@@ -17,14 +17,16 @@
         <% if booking.pending? %>
           <%= simple_form_for booking do |f| %>
             <%= f.input :status, as: :hidden, input_html: { value: 2} %>
-            <%= f.submit 'Accept', class: 'btn btn-info' %>
+            <%= f.submit 'Accept' %>
           <% end %>
           <%= simple_form_for booking do |f| %>
             <%= f.input :status, as: :hidden, input_html: { value: 1} %>
-            <%= f.submit 'Reject', class: 'btn btn-info' %>
+            <%= f.submit 'Reject' %>
           <% end %>
+        <% elsif booking.rejected? %>
+          <p class='booking-tag-rejected'><%= booking.status %></p>
         <% else %>
-          <p class='booking-tag'><%= booking.status %></p>
+          <p class='booking-tag-accept'><%= booking.status %></p>
         <% end %>
       </div>
     </div>

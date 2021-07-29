@@ -15,11 +15,20 @@
     display: flex;
     align-items: center;
   }
-  .booking-tag {
+  .booking-tag-rejected {
     margin: 15px 18px;
     padding: 2px 5px 0px 5px;
     background-color: #bfbfbf;
     color: white;
+    border-radius: 8px;
+    font-weight: lighter;
+    font-size: 15px;
+  }
+  .booking-tag-accept {
+    margin: 15px 18px;
+    padding: 2px 5px 0px 5px;
+    background-color: #FDCB9E;
+    color: black;
     border-radius: 8px;
     font-weight: lighter;
     font-size: 15px;
