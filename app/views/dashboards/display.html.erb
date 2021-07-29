@@ -12,15 +12,15 @@
     <div class="col-12 col-lg-9">
       <div class="dashboard-content">
         <div class="content-titles" >
-          <%= link_to dashboard_pets_path do %>
-            <h5>Pets</h5>
-          <% end %>
-          <%= link_to dashboard_bookings_path do %>
-            <h5>Bookings</h5>
-          <% end %>
-          <%= link_to dashboard_requests_path do %>
-            <h5>Booking requests</h5>
-          <% end %>
+          <a class="dashboard-btn" data-toggle="collapse" href="#collapsepets" role="button" aria-expanded="false" aria-controls="collapsepets">
+            Pets
+          </a>
+          <button class="dashboard-btn" type="button" data-toggle="collapse" data-target="#collapsebookings" aria-expanded="false" aria-controls="collapsebookings">
+            Bookings
+          </button>
+          <button class="dashboard-btn" type="button" data-toggle="collapse" data-target="#collapserequests" aria-expanded="false" aria-controls="collapserequests">
+            Booking requests
+          </button>
           <div class="content-show">
           </div>
         </div>
@@ -32,24 +32,40 @@
 <div class="content-container">
   <div class="row">
     <div class="col-12 col-lg-9 offset-lg-4">
-      <div class="content-pets">
+      <div class="content-pets"  id="collapsepets">
         <% if @user.pets.empty? %>
-          <div class="my-pets-card">
-            <p>HI</p>
-            <%= link_to "➕Add", new_pet_path %>
+          <div class="my-pets-card-add">
+            <%= link_to "➕ Add pet", new_pet_path %>
           </div>
         <% else %>
           <% @user.pets.each do |pet| %>
             <div class="my-pets-card">
               <%= cl_image_tag pet.pet_pics.first.key, crop: :fill %>
-              <div class="my-pets-card-info">
-                <h5><%= pet.name %></h5>
-                <p><h5><%= pet.description %></h5></p>
+              <div class="my-pets-card-infos">
+                <h4><%= pet.name %></h4>
+                <p><span>Breed: </span><%= pet.breed.capitalize %></p>
+                <p><span>Description: </span><%= pet.description %></p>
               </div>
             </div>
           <% end %>
         <% end %>
       </div>
     </div>
+  </div>
+</div>
+
+
+
+ <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  SEE ALL
+</button> -->
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+  </div>
+</div>
+<div class="collapse" id="collapsebookings">
+  <div class="card card-body">
+    aa
   </div>
 </div>
