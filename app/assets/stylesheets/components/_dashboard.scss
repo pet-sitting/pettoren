@@ -1,10 +1,10 @@
 @media (min-width: 300px) {
   .top-box {
-    height: 350px;
+    height: 380px;
     border-bottom: thin solid lightgrey;
   }
 
-  .dashboard-user {
+  .dashboard-uqer {
     display: flex;
     align-items: center;
     color: #3F3F44;
@@ -23,20 +23,26 @@
     overflow: hidden;
   }
 
-  .dashboard-content {
-    display: flex;
-    height: 92px;
-    align-items: flex-end;
+  .content-pets {
+    width: 100vw;
+    left: 0;
   }
 
-  .content-container {
-    width: 90%;
+  .content-titles {
+    display: flex;
+    height: 83px;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .my-pets-card {
+    width: 80%;
     margin: 40px auto;
     border: 1px solid #e1e4e8;
     border-radius: 6px;
     display: flex;
     justify-content: center;
-    min-height: 600px;
+    height: 100px;
   }
 }
 
@@ -71,11 +77,26 @@
     align-items: flex-end;
   }
 
-  .content-container {
-    width: 53%;
-    max-height: 100vh;
-    margin-top: -170px;
-    margin-right: 6vw;
+  .content-titles {
+    display: flex;
+    max-width: 600px;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-grow: 1;
+    margin: 0 auto;
+  }
+
+  .content-pets {
+    width: 100vw;
+    left: 0;
+  }
+
+  .my-pets-card {
+    max-width: 50vw;
+    height: 50px;
+    margin-top: -140px;
+    margin-bottom: 10px;
+    margin-left: 8vw;
     border: 1px solid #e1e4e8;
     border-radius: 6px;
     display: flex;
@@ -88,12 +109,4 @@
   height: 100%;
 }
 
-.content-titles {
-  display: flex;
-  max-width: 600px;
-  justify-content: space-around;
-  align-items: flex-end;
-  flex-grow: 1;
-  margin: 0 auto;
-}
 
