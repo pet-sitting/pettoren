@@ -8,8 +8,5 @@ Rails.application.routes.draw do
     resources :pet_schedules, only: [:new, :create]
   end
   get "dashboard", to: 'dashboards#display'
-  get "dashboard/pets", to: 'dashboards#pets'
-  get "dashboard/bookings", to: 'dashboards#bookings'
-  get "dashboard/requests", to: 'dashboards#requests'
   resources :bookings, only: [:update, :show]
 end
