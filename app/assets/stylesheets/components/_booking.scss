@@ -15,24 +15,38 @@
     display: flex;
     align-items: center;
   }
-  .booking-tag-rejected {
-    margin: 15px 18px;
-    padding: 2px 5px 0px 5px;
-    background-color: #bfbfbf;
-    color: white;
-    border-radius: 8px;
-    font-weight: lighter;
-    font-size: 15px;
-  }
-  .booking-tag-accept {
-    margin: 15px 18px;
-    padding: 2px 5px 0px 5px;
-    background-color: #FDCB9E;
-    color: black;
-    border-radius: 8px;
-    font-weight: lighter;
-    font-size: 15px;
-  }
+}
+
+.booking-tag-rejected {
+  margin: 15px 18px;
+  padding: 2px 5px 0px 5px;
+  background-color: #bfbfbf;
+  color: black;
+  border-radius: 8px;
+  font-weight: lighter;
+  font-size: 15px;
+  border: 1px solid lightgrey;
+}
+.booking-tag-accepted {
+  margin: 15px 18px;
+  padding: 2px 5px 0px 5px;
+  background-color: #FDCB9E;
+  color: black;
+  border-radius: 8px;
+  font-weight: lighter;
+  font-size: 15px;
+  border: 1px solid lightgrey;
+}
+
+.booking-tag-pending {
+  margin: 15px 18px;
+  padding: 2px 5px 0px 5px;
+  background-color: #94D0CC;
+  color: black;
+  border-radius: 8px;
+  font-weight: lighter;
+  font-size: 15px;
+  border: 1px dashed grey;
 }
 
 .booking-info {
