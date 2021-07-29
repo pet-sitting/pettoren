@@ -62,7 +62,7 @@
     </div>
   </div>
   <div class="pets-all">
-    <%if :query.present? %>
+    <%if params[:query].present? %>
     <h3>Results for "<%=  params[:query]  %>"</h3>
     <% else  %>
     <h3>All pets</h3>
