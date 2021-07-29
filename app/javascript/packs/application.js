@@ -28,18 +28,21 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { filterPets } from "../components/filters";
 import { initMapbox } from '../plugins/init_mapbox';
 import { setCarousel } from '../components/carousel';
+import { counter } from '../components/counter';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  counter();
   filterPets();
   initMapbox();
-
+  
   function showImage(input) {
     if (input.files) {
       const preBox = document.getElementById('preview_box');
@@ -65,7 +68,7 @@ document.addEventListener('turbolinks:load', () => {
     showImage(this);
   })
 
-  $('.owl-carousel').owlCarousel({
+  $('.owl-thumbnails').owlCarousel({
     loop: true,
     margin: 10,
     responsive: {
@@ -80,5 +83,27 @@ document.addEventListener('turbolinks:load', () => {
       }
     },
   })
+
+  $('.owl-review').owlCarousel({
+    center: true,
+    loop: true,
+    items: 1,
+    margin: 30,
+    stagePadding: 0,
+    nav: false,
+    navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+  })
+
   setCarousel();
 });
