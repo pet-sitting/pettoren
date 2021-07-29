@@ -1,11 +1,11 @@
 <div class="bookings">
-  <% @bookings.each do |booking| %>
+  <% @requests.each do |booking| %>
     <div class="booking">
       <div class='booking-left'>
-        <%= cl_image_tag booking.user.user_pic.key, class: 'avatar-bordered' %>
+        <%= cl_image_tag booking.sitter.user_pic.key, class: 'avatar-bordered' %>
         <div class="booking-info">
           <div class="booking-info-title">
-            <%= booking.user.name %>
+            <%= booking.sitter.name %>
           </div>
           <div class="booking-info-details">
             <%= booking.date %>
