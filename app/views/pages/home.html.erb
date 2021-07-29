@@ -1,38 +1,184 @@
-   <div class="wrapper">
-      <section class="hero" style="background-image: url(<%= asset_path 'pets_banner.jpg' %>)">
-        <div class="inner" id="banner-text">
-          <div class="clipper">
-            <h1>Become a pettsitter!</h1>
-          </div>
-          <div class="anim-panel">
-            <p>
-              Do you want to take care of a cute dog? <br> How about playing for a few hours with a cat?
-            </p>
-            <%= link_to "Find a pet!", pets_path, class: "btn btn-primary" %>
-          </div>
-        </div>
-      </section>
-      <section class="sidebar">
-        <div class="inner">
-          <div class="clipper">
-            <h2>About us</h2>
-          </div>
-          <div class="anim-panel">
-            <p>
-              <u>Pettoren</u> is an app for put lovers, who can own a pet. If you want to find yourself a cute, fluffy (or scally) friend, please check out our app. It's full of pets waiting for you the thier next babysitter!
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="Register">
-        <div class="inner">
-          <div class="clipper">
-            <h2>Register</h2>
-          </div>
-          <div class="anim-panel">
-            <p>Register to check all the pets in your area!</p>
-            <%= link_to "Register now!", new_user_registration_path, class: "btn btn-primary" %>
-          </div>
-        </div>
-      </section>
+<div class="parallax" style="background-image: url(<%= asset_path 'parallax_bg.jpg' %>)">
+  <div class="banner-content animated fadeInUp">
+    <div class="banner-text">
+      <h1>Become a petsitter!</h1>
+      <p>
+        Do you want to take care of a cute dog? <br> How about playing for a few hours with a cat?
+      </p>
     </div>
+    <div class="cta-wrapper">
+      <div class="banner-cta">
+        <%= link_to "Find a pet!", pets_path %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="about-wrapper">
+  <div class="about-left">
+    <%= image_tag(asset_path 'pets_group.png') %>
+    <div class="circle"></div>
+  </div>
+  <div class="about-right">
+    <h2>Why Pettoren?</h2>
+    <div class="services-wrapper">
+      <div class="service">
+        <div class="icon-wrapper">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <%= image_tag(asset_path 'nearby.png') %>
+          </div>
+        </div>
+        <div class="text">
+          <h4>Find nearby pets</h4>
+          <p>Find pets using search bar, filters or distace sliders. You will find a new friend for sure!</p>
+        </div>
+      </div>
+      <div class="service">
+        <div class="icon-wrapper">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <%= image_tag(asset_path 'pet.png') %>
+          </div>
+        </div>
+        <div class="text">
+          <h4>Choose the pet</h4>
+          <p>Learn more about the pet and it's availability. Check out all the cute photos too!</p>
+        </div>
+      </div>
+      <div class="service">
+      <div class="icon-wrapper">
+        <div class="icon d-flex align-items-center justify-content-center">
+          <%= image_tag(asset_path 'booking.png') %>
+        </div>
+      </div>
+        <div class="text">
+          <h4>Book your pet</h4>
+          <p>Book the pet you like according to your schedule. Don't worry, you will find an open day.</p>
+        </div>
+      </div>
+      <div class="service">
+        <div class="icon-wrapper">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <%= image_tag(asset_path 'dashboard-interface.png') %>
+          </div>
+        </div>
+        <div class="text">
+          <h4>Manage booking</h4>
+          <p>Check the status of your booking in your dashboard. Is your booking still pending?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="statistics-wrapper d-flex align-items-center justify-content-center">
+  <div class="statistics">
+    <div class="stat">
+      <div class="stat-number"> <span id="pet-count" data-count="<%= Pet.count %>"></span></div>
+      <div class="stat-text">Pets</div>
+    </div>
+    <div class="stat">
+      <% pics_number = 0 %>
+      <% Pet.all.each do |pet| %>
+      <% pics_number += pet.pet_pics.count %>
+      <% end %>
+      <div class="stat-number"><span id="pic-count" data-count=" <%= pics_number %> "></span></div>
+      <div class="stat-text">Pets pictures</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number"><span id="user-count" data-count="<%= User.count %>"></span></div>
+      <div class="stat-text">Users</div>
+    </div>
+  </div>
+</div>
+<div class="parallax-reviews" style="background-image: url(<%= asset_path 'review_bg.jpg' %>)">
+  <div class="container">
+    <div class="review-section">
+      <div class="review-title">
+        <h2>Happy Petsitters</h2>
+      </div>
+      <div class="carousel-wrapper">
+        <div class="carousel">
+          <div class="owl-review owl-carousel owl-theme">
+            <div class="item">
+              <div class="review-wrapper">
+                <div class="quote-icon d-flex align-items-center justify-content-center">
+                  <img id="quote-icon-1" src=" <%= asset_path 'left-quote.png' %> " alt="">
+                </div>
+                <p>I found a cute buddy thanks to Pettoren. I'm playing with him every Saturday!</p>
+                <div class="review-user">
+                  <img id="av1" class="review-avatar" src=" <%= asset_path 'users/selim.jpg' %> " alt="avatar">
+                  <div class="review-name">Selim Begag</div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="review-wrapper">
+                <div class="quote-icon d-flex align-items-center justify-content-center">
+                  <img id="quote-icon-2" src=" <%= asset_path 'left-quote.png' %> " alt="">
+                </div>
+                <p>My apartment is not alowing pets. Then I've discovered this website. I can find a pet to rent wiht just a few clicks.</p>
+                <div class="review-user">
+                  <img id="av2" class="review-avatar" src=" <%= asset_path 'users/piotr.jpg' %> " alt="avatar">
+                  <div class="review-name">Piotr Polanski</div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="review-wrapper">
+                <div class="quote-icon d-flex align-items-center justify-content-center">
+                  <img id="quote-icon-3" src=" <%= asset_path 'left-quote.png' %> " alt="">
+                </div>
+                <p>I always wanted to have an animal, but I can't afford to have one. I was looking for a solution to my problem and found Pettoren.</p>
+                <div class="review-user">
+                  <img id="av3" class="review-avatar" src=" <%= asset_path 'users/ellie.jpg' %> " alt="avatar">
+                  <div class="review-name">Ellie Xu</div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="review-wrapper">
+                <div class="quote-icon d-flex align-items-center justify-content-center">
+                  <img id="quote-icon-4" src=" <%= asset_path 'left-quote.png' %> " alt="">
+                </div>
+                <p>As an owner of a long cat T-shirt I wanted to find a real cat to play with. Now I can!</p>
+                <div class="review-user">
+                  <img id="av4" class="review-avatar" src=" <%= asset_path 'users/yann.jpg' %> " alt="avatar">
+                  <div class="review-name">Yann Klein</div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="review-wrapper">
+                <div class="quote-icon d-flex align-items-center justify-content-center">
+                  <img id="quote-icon-5" src=" <%= asset_path 'left-quote.png' %> " alt="">
+                </div>
+                <p>I used to have a lot of pets, but since I moved to Japan I can't even own a hamster. With pettoren I can play with lots a of pets.</p>
+                <div class="review-user">
+                  <img id="av5" class="review-avatar" src=" <%= asset_path 'users/doug.jpg' %> " alt="avatar">
+                  <div class="review-name">Doug Berkley</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container gallery">
+  <h2>Pets gallery</h2>
+  <div class="pets-all-list">
+    <% @pets.each do |pet| %>
+      <% if pet.pet_pics.attached? %>
+        <%= link_to pet_path(pet[:id]) do %>
+          <div class="pet-card gallery" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path pet.pet_pics.sample.key%>')">
+            <div class="pet-info-wrapper gallery">
+              <div class="pet-info gallery">
+                <h4><%= pet.name %></h4>
+                <p><%= pet.breed %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
