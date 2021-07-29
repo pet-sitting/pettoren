@@ -1,0 +1,4 @@
+<%= simple_form_for [@pet, @schedule] do |f| %>
+  <x-calendar output-name="booking-dates" />
+  <%= f.submit "post", class: 'btn btn-outline-primary my-2 my-sm-0' %>
+<% end %>
