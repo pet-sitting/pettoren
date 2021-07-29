@@ -1,36 +1,44 @@
+.wrapbox {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 .calendarbox {
-  max-width: 400px;
-  max-height: 600px;
+  height: 430px;
   background-color: #F9F9F9;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 0 0 10px 10px;
+  border-radius: 10px;
   align-content: center;
-  margin-bottom: 10px;
+  justify-content: center;
+
 }
 
 .calendarbox:hover {
   box-shadow: 0 20px 35px rgba(0,0,0,0.1);
 }
 
-.month-year-title {
-  margin-left: 30px;
-  margin-top: 20px;
-  margin-bottom: 30px;
+.month-year-box {
+  margin: 15px 9px;
   display: flex;
   justify-content: space-between;
+  text-align: center;
 }
 
-.right-arr {
-  position: relative;
-  left: 30px;
-  cursor: pointer;
+.month-year-box p {
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #3F3F44;
 }
-
-.left-arr {
-  position: relative;
-  left: -38px;
-  cursor: pointer;
+.arr {
+  width: 18%;
+  display: flex;
+  justify-content: space-between;
+  & p {
+    color: #80c985;
+  }
 }
 
 .week-row {

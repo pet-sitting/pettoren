@@ -9,6 +9,11 @@ class PetsController < ApplicationController
   def index
     @pets = policy_scope(Pet)
     authorize @pets
+    if params[:query].present?
+      @pets = Pet.global_search(params[:query])
+    else
+      @pets = Pet.all
+    end
   end
 
   def show
@@ -26,10 +31,30 @@ class PetsController < ApplicationController
       }
   end
 
+  def new
+    @pet = Pet.new
+    authorize @pet
+  end
+
+  def create
+    @pet = Pet.new(pet_params)
+    @pet.user = current_user
+    if @pet.save
+      redirect_to new_pet_pet_schedule_path(@pet)
+    else
+      render :new
+    end
+    authorize @pet
+  end
+
   private
 
   def set_pet
     @pet = Pet.find(params[:id])
     authorize @pet
+  end
+
+  def pet_params
+    params.require(:pet).permit(:name, :species, :breed, :description, pet_pics: [])
   end
 end

@@ -62,7 +62,11 @@
     </div>
   </div>
   <div class="pets-all">
+    <%if :query.present? %>
+    <h3>Results for "<%=  params[:query]  %>"</h3>
+    <% else  %>
     <h3>All pets</h3>
+    <% end %>
     <div class="pets-all-list">
       <% @pets.each do |pet| %>
         <% if pet.pet_pics.attached? %>

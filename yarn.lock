@@ -922,10 +922,10 @@
   "resolved" "https://registry.npmjs.org/@csstools/convert-colors/-/convert-colors-1.4.0.tgz"
   "version" "1.4.0"
 
-"@ellie-xyb/multi-select-calendar@^1.0.2":
-  "integrity" "sha512-Af8kg99aj5cfTL7UwrH9H8W4sA842EQACDdGEep24QG7TDgEld/WqfZ9SljUd1xlMd8oBor8+0OdAi6lcJXTYQ=="
-  "resolved" "https://registry.npmjs.org/@ellie-xyb/multi-select-calendar/-/multi-select-calendar-1.0.2.tgz"
-  "version" "1.0.2"
+"@ellie-xyb/multi-select-calendar@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@ellie-xyb/multi-select-calendar/-/multi-select-calendar-1.1.0.tgz#49a07c333ef3981a0bf321c5f39db46cd9f0b2dc"
+  integrity sha512-HUEcfhowqPAG8PWyljD/5NafjIaWeHKZcl9J1UDfEemEf8tEnbWPo/QheVJ4KJtpuVDaNhCZNiVaL7cWDIwjQQ==
   dependencies:
     "esbuild" "^0.12.15"
     "preact" "^10.5.14"
