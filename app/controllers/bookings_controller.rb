@@ -26,16 +26,12 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    if @booking.update(booking_params)
-
+    unless @booking.update(status: params[:status].to_i)
+      flash.alert = "Failed change."
+      puts 'ai'
     else
-
+      puts 'haha'
     end
-  end
-
-  private
-
-  def booking_params
-    params.require(:booking).permit(:status, date)
+    authorize @booking
   end
 end

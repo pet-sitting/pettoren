@@ -5,10 +5,11 @@
         <%= cl_image_tag booking.sitter.user_pic.key, class: 'avatar-bordered' %>
         <div class="booking-info">
           <div class="booking-info-title">
-            <%= booking.sitter.name %>
+            <h3><%= booking.sitter.name.capitalize %></h3>
           </div>
           <div class="booking-info-details">
-            <%= booking.date %>
+            <h4><strong>Booking date: </strong><%= booking.date %></h4>
+            <h4><strong>Booking pet: </strong><%= booking.pet.name %></h4>
           </div>
         </div>
       </div>
