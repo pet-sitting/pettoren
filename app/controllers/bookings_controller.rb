@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
       @booking.date = Date.parse(date)
       @booking.sitter = current_user
       @booking.status = 0
+      authorize @booking
       render :show unless @booking.save
     end
   end
