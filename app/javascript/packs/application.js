@@ -37,6 +37,10 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { setCarousel } from '../components/carousel';
 import { counter } from '../components/counter';
 
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -48,6 +52,7 @@ document.addEventListener('turbolinks:load', () => {
     swal({
       title: "Booking succeed!",
       icon: "success",
+      button: "Go to dashboard",
     });
   })
 
