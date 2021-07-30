@@ -39,7 +39,7 @@
           </div>
         <% else %>
           <div class="my-pets-card-title">
-            <h1 class="subtitle">My pets</h1>
+            <i class="fas fa-paw"></i><h1 class="subtitle">My pets</h1>
           </div>
           <% @user.pets.each do |pet| %>
             <div class="my-pets-card">
@@ -59,15 +59,25 @@
 
   <div class="collapse" id="collapsebookings">
     <div class="container">
+      <i class="far fa-calendar-alt"></i>
       <h1 class="subtitle">My bookings</h1>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <% unless @bookings.empty? %>
           <% @bookings.each do |booking| %>
             <div class="col pb-3">
               <div class="card h-100 border-dark">
-                <div class="card-header text-secondary">Booked <%= link_to booking.pet.name, pet_path(booking.pet) %> at: <%= booking.created_at %></div>
                 <%= cl_image_tag booking.pet.pet_pics.first.key, class: :"card-img-top", crop: :fill %>
                 <div class="card-body">
+                  <div class="card-header text-secondary">
+                    Booked <%= link_to booking.pet.name, pet_path(booking.pet) %> at: <%= booking.created_at %>
+                    <% if booking.pending? %>
+                      <h1 class="booking-tag-pending">Pending</h1>
+                    <% elsif booking.rejected? %>
+                      <h1 class="booking-tag-rejected">Rejected</h1>
+                    <% else %>
+                      <h1 class="booking-tag-accepted">Accepted</h1>
+                    <% end %>
+                  </div>
                   <p class="card-text">Address: <%= booking.pet.user.address %></p>
                   <h4 class="card-title">Booking date: <%= booking.date %></h4>
                 </div>
@@ -78,6 +88,16 @@
       </div>
     </div>
   </div>
-</div>
 
+  <div class="collapse-show" id="collapserequests">
+   <div class="container">
+      <i class="fas fa-envelope-square"></i>
+      <h1 class="subtitle">Requests to me</h1>
+      <div class="row">
+        <%= render 'shared/bookingrs' %>
+      </div>
+    </div>
+  </div>
+
+</div>
 

@@ -14,4 +14,6 @@ class User < ApplicationRecord
 
   has_many :pets, dependent: :destroy
   has_many :bookings_as_sitter, class_name: "Booking", foreign_key: :sitter_id
+  has_many :bookings
+  has_many :bookings_as_owner, through: :pets, source: :bookings
 end
