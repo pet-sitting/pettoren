@@ -15,8 +15,6 @@ class BookingsController < ApplicationController
       @booking.status = 0
       render :show unless @booking.save
     end
-    flash.alert = "Must select booking date(s)." if params[:"booking-dates"].empty?
-    # redirect_to pet_path(params[:pet_id])
   end
 
   def update

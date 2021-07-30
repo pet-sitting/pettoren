@@ -45,13 +45,24 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 
   $('#sweetbook').on('click', function() {
-    swal({
-      title: "Booking succeed!",
-      icon: "success",
-      button: "Close",
-    }).then(function(){
-      location.reload();
-    });
+
+    if (document.querySelector("[name=booking-dates]").value == "") {
+      swal({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please select dates for your booking.',
+      }).then(function() {
+        window.location.reload();
+      });
+    } else {
+      swal({
+        title: "Booking succeed!",
+        icon: "success",
+        button: "Close",
+      }).then(function(){
+        window.location.reload();
+      });
+    }
   });
 
   function showImage(input) {
