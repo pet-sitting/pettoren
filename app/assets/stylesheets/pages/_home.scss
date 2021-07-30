@@ -1,4 +1,5 @@
 $mint-green: #CCEABB;
+$button-font-black: #0E0000;
 
 .parallax {
   height: 100vh;
@@ -8,21 +9,38 @@ $mint-green: #CCEABB;
   background-size: cover;
 }
 
-.banner-content {
+.banner-content-wrapper {
   height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   color: #fffafa;
-  text-shadow: 1px 1px #333;
+  padding-bottom: 60px;
+  & .banner-text {
+    padding-left: 160px;
+  }
   & h1 {
     font-size: 60px;
     font-weight: bold;
+    text-shadow: 1px 1px grey;
+    width: 500px;
   }
-  & p {
-    font-size: 36px;
+  & a {
+    font-weight: bold;
+    background: #CCEABB;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-size: 26px;
+    color: #0E0000;
+    text-decoration: none;
   }
+  & a:hover {
+    background: #adeb89;
+  }
+}
+
+.cta-wrapper {
+  padding: 40px 0 0 160px;
 }
 
 .about-wrapper {
@@ -60,6 +78,7 @@ $mint-green: #CCEABB;
   z-index: -1;
   background-color: $mint-green;
   top: 3%;
+  border: 1px solid #8080804a
 }
 
 .services-wrapper {
@@ -84,6 +103,7 @@ $mint-green: #CCEABB;
   background: $mint-green;
   box-shadow: 0px 10px 30px -4px rgba(0, 0, 0, 0.15);
   margin-right: 15px;
+  border: 1px solid #8080804a
 }
 
 .service h4 {
@@ -94,7 +114,6 @@ $mint-green: #CCEABB;
 .statistics-wrapper {
   padding: 4rem 0;
   background-color: $mint-green;
-  margin-bottom: 150px;
 }
 
 .statistics {
@@ -118,6 +137,77 @@ $mint-green: #CCEABB;
     font-size: 26px;
   }
 }
+
+//registration form
+.register-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+.register-right {
+  margin-left: 200px;
+  position: relative;
+  & img {
+    width: auto;
+    height: 450px;
+  }
+}
+
+.register-right .circle {
+  top: -5%;
+  left: -16%;
+}
+
+.registration-form-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration-form {
+  background-color: #fffafa;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  box-shadow: 0px 30px 33px -41px rgba(0, 0, 0, 0.24);
+  & h2 {
+    font-weight: 800;
+    margin-bottom: 40px;
+    font-size: 40px;
+  }
+}
+
+.registration-form .simple_form label {
+  width: 250px;
+}
+
+.registration-form .form-control {
+  width: 53%;
+}
+
+.registration-form .simple_form input {
+  height: 30px;
+}
+
+.registration-form .form-actions {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.registration-form .simple_form input[type="submit"] {
+  margin: 20px 0;
+  padding: 20px 15px;
+  width: 120px;
+  background-color: $mint-green;
+  color: $button-font-black;
+  font-weight: bold;
+}
+
+//reviews
 
 .parallax-reviews {
   height: 650px;
@@ -170,7 +260,7 @@ $mint-green: #CCEABB;
 
 .review-wrapper {
   height: 300px;
-  background-color: white;
+  background-color: #fffafa;
   padding: 40px 20px;
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.02);
@@ -206,6 +296,7 @@ $mint-green: #CCEABB;
     font-size: 40px;
     font-weight: 800;
     padding: 3rem;
+    margin-bottom: 0;
   }
 }
 
@@ -292,7 +383,7 @@ $mint-green: #CCEABB;
   height: 10px;
   margin: 5px;
   border-radius: 50%;
-  background: #e6e6e6;
+  background: #CCEABB;
   position: relative;
 }
 
@@ -305,10 +396,10 @@ $mint-green: #CCEABB;
   width: 14px;
   height: 14px;
   content: '';
-  border: 1px solid #e6e6e6;
+  border: 1px solid #CCEABB;
   border-radius: 50%;
 }
 
 .owl-review .owl-dots .owl-dot.active {
-  background: #b3b3b3;
+  background: #adeb89;
 }
