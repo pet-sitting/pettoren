@@ -40,6 +40,10 @@ import { counter } from '../components/counter';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  $(document).ready(function () {
+    $(this).scrollTop(0);
+  });
+
   counter();
   filterPets();
   initMapbox();
@@ -84,7 +88,7 @@ document.addEventListener('turbolinks:load', () => {
     }
   }
 
-  $('#pet_pet_pics').on('change', function() {
+  $('#pet_pet_pics').on('change', function () {
     const preBox = document.getElementById('preview_box');
     preBox.innerHTML = "";
     showImage(this);
@@ -112,8 +116,6 @@ document.addEventListener('turbolinks:load', () => {
     items: 1,
     margin: 30,
     stagePadding: 0,
-    nav: false,
-    navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
     responsive: {
       0: {
         items: 1
