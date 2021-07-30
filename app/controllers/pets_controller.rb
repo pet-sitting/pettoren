@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[home index show]
+  skip_before_action :authenticate_user!, only: %i[home]
   before_action :set_pet, only: %i[show]
 
   # skip_after_action :verify_authorized, only: %i[home index show]
