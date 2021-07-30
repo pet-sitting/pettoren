@@ -39,10 +39,14 @@ import { counter } from '../components/counter';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  $(document).ready(function () {
+    $(this).scrollTop(0);
+  });
+
   counter();
   filterPets();
   initMapbox();
-  
+
   function showImage(input) {
     if (input.files) {
       const preBox = document.getElementById('preview_box');
@@ -62,7 +66,7 @@ document.addEventListener('turbolinks:load', () => {
     }
   }
 
-  $('#pet_pet_pics').on('change', function() {
+  $('#pet_pet_pics').on('change', function () {
     const preBox = document.getElementById('preview_box');
     preBox.innerHTML = "";
     showImage(this);

@@ -1,10 +1,13 @@
-<div class="parallax" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'parallax_bg.jpg' %>);">
-  <div class="banner-content animated fadeInUp">
-    <div class="banner-text">
-      <h1>Make pet friends in your area!</h1>
-    <div class="cta-wrapper">
-      <div class="banner-cta">
-        <%= link_to "Find a pet!", pets_path %>
+<div class="parallax" style="background-image: url(<%= asset_path 'home_banner.jpg' %>);">
+  <div class="banner-content-wrapper animated fadeInUp">
+    <div class="banner-content">
+      <div class="banner-text">
+        <h1>Make pet friends in your area!</h1>
+      </div>
+      <div class="cta-wrapper">
+        <div class="banner-cta">
+          <%= link_to "Find a pet!", pets_path %>
+        </div>
       </div>
     </div>
   </div>
@@ -84,11 +87,17 @@
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="registration-form-wrapper">
-    <div class="registration-form">
-      <%= render "registration_form"%>
+<div class="register-wrapper">
+  <div class="register-left">
+    <div class="registration-form-wrapper">
+      <div class="registration-form">
+        <%= render "registration_form"%>
+      </div>
     </div>
+  </div>
+  <div class="register-right">
+    <%= image_tag(asset_path 'pets_group_2.png') %>
+    <div class="circle"></div>
   </div>
 </div>
 <div class="parallax-reviews" style="background-image: url(<%= asset_path 'review_bg.jpg' %>)">
