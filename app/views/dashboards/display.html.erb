@@ -36,7 +36,10 @@
           <div class="container">
             <% if @user.pets.empty? %>
               <div class="my-pets-card-add">
-                <%= link_to "➕ Add pet", new_pet_path %>
+                <div class="add-pet-wrapper">
+                  <i class="fas fa-plus-circle"></i>
+                  <%= link_to "Add pet", new_pet_path %>
+                </div>
               </div>
             <% else %>
               <div class="my-pets-card-title">

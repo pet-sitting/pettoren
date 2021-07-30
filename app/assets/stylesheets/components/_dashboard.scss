@@ -58,14 +58,14 @@ $mint-green: #CCEABB;
   }
 
   .my-pets-card-add {
-    // width: 55%;
-    // margin: 50px auto 38px auto;
+    width: 55%;
+    margin: 50px auto 38px auto;
     border: 1px solid #e1e4e8;
-    // border-radius: 3px;
-    // display: flex;
-    // justify-content: center;
-    // padding-top: 20px;
-    // padding-bottom: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 
   .my-pets-card img {
@@ -150,42 +150,47 @@ $mint-green: #CCEABB;
   //   margin: 0 auto;
   // }
 
-  .my-pets-card-title {
-    // max-width: 70%;
-    // margin-top: -120px;
-    // margin-bottom: 76px;
-    // margin-left: 25vw;
-    // display: flex;
-    // justify-content: center;
-    // overflow: hidden;
-  }
+  // .my-pets-card-title {
+  //   // max-width: 70%;
+  //   // margin-top: -120px;
+  //   // margin-bottom: 76px;
+  //   // margin-left: 25vw;
+  //   // display: flex;
+  //   // justify-content: center;
+  //   // overflow: hidden;
+  // }
 
-  .my-pets-card {
-    // max-width: 70%;
-    // max-height: 349px;
-    // margin-top: -77px;
-    // margin-bottom: 65px;
-    // margin-left: 42vw;
-    // padding-right: 10px;
-    // border: 1px solid #e1e4e8;
-    // border-radius: 6px;
-    // display: flex;
-    // justify-content: space-between;
-    // overflow: hidden;
-    // background: #F7F7F7;
-    // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  }
+  // .my-pets-card {
+  //   // max-width: 70%;
+  //   // max-height: 349px;
+  //   // margin-top: -77px;
+  //   // margin-bottom: 65px;
+  //   // margin-left: 42vw;
+  //   // padding-right: 10px;
+  //   // border: 1px solid #e1e4e8;
+  //   // border-radius: 6px;
+  //   // display: flex;
+  //   // justify-content: space-between;
+  //   // overflow: hidden;
+  //   // background: #F7F7F7;
+  //   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // }
 
   .my-pets-card-add {
-    margin-top: -140px;
-    margin-left: 45vw;
-    width: 500px;
-    border: 1px solid #e1e4e8;
-    border-radius: 3px;
+    height: 100px;
     display: flex;
     justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 15px;
+    align-items: center;
+    width: 500px;
+    border: 1px solid #e1e4e8;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    & a {
+      font-size: 26px;
+    }
   }
 }
 
