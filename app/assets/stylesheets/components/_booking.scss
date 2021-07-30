@@ -90,14 +90,11 @@
   }
 }
 
-.image-wrapper {
-  height: 100%;
-}
-
 .review-image {
-  border-radius: 15px 0 0 15px;
-  height: 100%;
-  width: 200px;
+  border-radius: 50%;
+  height: 140px;
+  width: 140px;
+  object-fit: cover;
 }
 
 .booking-card {
@@ -145,28 +142,31 @@
 }
 
 .booking .simple_form input[type="submit"] {
-  margin: 0;
-  width: 120px;
-  color: #111;
-  font-weight: normal;
-  font-size: 18px;
-  border: 1px solid rgba(0, 0, 0, 0.02);
-  box-shadow: 0px 30px 33px -41px rgba(0, 0, 0, 0.24)
+  color: #3F3F44;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: medium;
+  transition: background 0.3s ease;
+  border: 1px solid grey;
+  margin: 26px;
 }
 
 .booking .simple_form input[type="submit"].accept-btn {
+  background: linear-gradient(#CCEABB, #80c985);
   margin-right: 20px;
-  background-color: $mint-green;
 }
 
 .booking .simple_form input[type="submit"].accept-btn:hover {
-  background-color: $mint-green;
+  background: linear-gradient(#80c985, #11beae);
+  color: white;
 }
 
 .booking .simple_form input[type="submit"].reject-btn {
-  background-color: #fd8383;
+  background: linear-gradient(#fd8383, #fc3535);
+  margin-right: 20px;
 }
 
 .booking .simple_form input[type="submit"].reject-btn:hover {
-  background-color: #fc3535;
+  background: linear-gradient(#fc3535, #f80000);
+  color: white;
 }
