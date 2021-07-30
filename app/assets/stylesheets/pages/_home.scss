@@ -114,7 +114,6 @@ $mint-green: #CCEABB;
 .statistics-wrapper {
   padding: 4rem 0;
   background-color: $mint-green;
-  margin-bottom: 150px;
 }
 
 .statistics {
@@ -138,6 +137,31 @@ $mint-green: #CCEABB;
     font-size: 26px;
   }
 }
+
+//registration form
+.registration-form-wrapper {
+  width: 100%;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration-form {
+  background-color: #fffafa;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  box-shadow: 0px 30px 33px -41px rgba(0, 0, 0, 0.24);
+  & h2 {
+    font-weight: 800;
+    margin-bottom: 40px;
+    font-size: 40px;
+  }
+}
+
+
+//reviews
 
 .parallax-reviews {
   height: 650px;
