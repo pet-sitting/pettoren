@@ -59,17 +59,16 @@
 
   <div class="collapse" id="collapsebookings">
     <div class="container">
-      <i class="far fa-calendar-alt"></i>
       <h1 class="subtitle">My bookings</h1>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <% unless @bookings.empty? %>
           <% @bookings.each do |booking| %>
             <div class="col pb-3">
-              <div class="card h-100 border-dark">
-                <%= cl_image_tag booking.pet.pet_pics.first.key, class: :"card-img-top", crop: :fill %>
+              <div class="card booking-card">
+                <%= cl_image_tag booking.pet.pet_pics.first.key, class: :"booking-card-img", crop: :fill %>
                 <div class="card-body">
-                  <div class="card-header text-secondary">
-                    Booked <%= link_to booking.pet.name, pet_path(booking.pet) %> at: <%= booking.created_at %>
+                  <div class="card-status text-secondary">
+                    Booked <%= link_to booking.pet.name, pet_path(booking.pet) %> at: <br> <%= booking.created_at.to_s(:long) %>
                     <% if booking.pending? %>
                       <h1 class="booking-tag-pending">Pending</h1>
                     <% elsif booking.rejected? %>
@@ -78,8 +77,14 @@
                       <h1 class="booking-tag-accepted">Accepted</h1>
                     <% end %>
                   </div>
-                  <p class="card-text">Address: <%= booking.pet.user.address %></p>
-                  <h4 class="card-title">Booking date: <%= booking.date %></h4>
+                  <div class="card-title-wrapper">
+                    <i class="far fa-calendar-alt"></i>
+                    <h4 class="card-title"><%= booking.date %></h4>
+                  </div>
+                  <div class="card-text-wrapper">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p class="card-text"><%= booking.pet.user.address %></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -91,10 +96,9 @@
 
   <div class="collapse-show" id="collapserequests">
    <div class="container">
-      <i class="fas fa-envelope-square"></i>
-      <h1 class="subtitle">Requests to me</h1>
+      <h1 class="subtitle">Booking requests</h1>
       <div class="row">
-        <%= render 'shared/bookingrs' %>
+        <%= render 'shared/bookings' %>
       </div>
     </div>
   </div>
