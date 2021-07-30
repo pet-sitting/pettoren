@@ -1,4 +1,4 @@
-<div class="parallax" style="background-image: url(<%= asset_path 'parallax_bg.jpg' %>)">
+<div class="parallax" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'parallax_bg.jpg' %>);">
   <div class="banner-content animated fadeInUp">
     <div class="banner-text">
       <h1>Make pet friends in your area!</h1>
@@ -82,6 +82,11 @@
       <div class="stat-number"><span id="user-count" data-count="<%= User.count %>"></span></div>
       <div class="stat-text">Users</div>
     </div>
+  </div>
+</div>
+<div class="registration-form-wrapper">
+  <div class="registration-form">
+    <%= render "registration_form"%>
   </div>
 </div>
 <div class="parallax-reviews" style="background-image: url(<%= asset_path 'review_bg.jpg' %>)">
