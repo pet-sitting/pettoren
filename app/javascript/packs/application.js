@@ -48,7 +48,7 @@ document.addEventListener('turbolinks:load', () => {
     swal({
       title: "Booking succeed!",
       icon: "success",
-      button: "Go to dashboard",
+      button: "Close",
     }).then(function(){
       location.reload();
     });
