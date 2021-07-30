@@ -40,7 +40,7 @@ const initMarker = (markers, map) => {
   element.style.width = '30px';
   element.style.height = '30px';
   element.style.backgroundColor = '#CCEABB';
-  element.style.border = "1px solid #3F3F44"
+  element.style.border = "1px solid grey"
   element.style.borderRadius = '50%';
   new mapboxgl.Marker(element)
     .setLngLat([markers.lng, markers.lat])
