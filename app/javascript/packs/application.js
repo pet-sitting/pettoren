@@ -28,6 +28,7 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
+import swal from 'sweetalert';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -46,6 +47,27 @@ document.addEventListener('turbolinks:load', () => {
   counter();
   filterPets();
   initMapbox();
+
+  $('#sweetbook').on('click', function() {
+
+    if (document.querySelector("[name=booking-dates]").value == "") {
+      swal({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please select dates for your booking.',
+      }).then(function() {
+        window.location.reload();
+      });
+    } else {
+      swal({
+        title: "Booking succeed!",
+        icon: "success",
+        button: "Close",
+      }).then(function(){
+        window.location.reload();
+      });
+    }
+  });
 
   function showImage(input) {
     if (input.files) {

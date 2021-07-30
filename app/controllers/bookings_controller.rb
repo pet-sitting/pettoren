@@ -13,15 +13,9 @@ class BookingsController < ApplicationController
       @booking.date = Date.parse(date)
       @booking.sitter = current_user
       @booking.status = 0
+      authorize @booking
       render :show unless @booking.save
     end
-    if params[:"booking-dates"].empty?
-      redirect_to pet_path(params[:pet_id])
-      flash.alert = "Must select booking date(s)."
-    else
-      redirect_to booking_path(@booking)
-    end
-    authorize Booking
   end
 
   def update

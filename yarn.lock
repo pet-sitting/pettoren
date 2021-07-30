@@ -923,9 +923,9 @@
   "version" "1.4.0"
 
 "@ellie-xyb/multi-select-calendar@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@ellie-xyb/multi-select-calendar/-/multi-select-calendar-1.1.0.tgz#49a07c333ef3981a0bf321c5f39db46cd9f0b2dc"
-  integrity sha512-HUEcfhowqPAG8PWyljD/5NafjIaWeHKZcl9J1UDfEemEf8tEnbWPo/QheVJ4KJtpuVDaNhCZNiVaL7cWDIwjQQ==
+  "integrity" "sha512-HUEcfhowqPAG8PWyljD/5NafjIaWeHKZcl9J1UDfEemEf8tEnbWPo/QheVJ4KJtpuVDaNhCZNiVaL7cWDIwjQQ=="
+  "resolved" "https://registry.npmjs.org/@ellie-xyb/multi-select-calendar/-/multi-select-calendar-1.1.0.tgz"
+  "version" "1.1.0"
   dependencies:
     "esbuild" "^0.12.15"
     "preact" "^10.5.14"
@@ -2942,6 +2942,11 @@
     "is-callable" "^1.1.4"
     "is-date-object" "^1.0.1"
     "is-symbol" "^1.0.2"
+
+"es6-object-assign@^1.1.0":
+  "integrity" "sha1-wsNYJlYkfDnqEHyx5mUrb58kUjw="
+  "resolved" "https://registry.npmjs.org/es6-object-assign/-/es6-object-assign-1.1.0.tgz"
+  "version" "1.1.0"
 
 "esbuild@^0.12.15":
   "integrity" "sha512-72V4JNd2+48eOVCXx49xoSWHgC3/cCy96e7mbXKY+WOWghN00cCmlGnwVLRhRHorvv0dgCyuMYBZlM2xDM5OQw=="
@@ -6197,6 +6202,11 @@
   "resolved" "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz"
   "version" "1.0.1"
 
+"promise-polyfill@^6.0.2":
+  "integrity" "sha1-36lpQ+qcEh/KTem1hoyznTRy4Fc="
+  "resolved" "https://registry.npmjs.org/promise-polyfill/-/promise-polyfill-6.1.0.tgz"
+  "version" "6.1.0"
+
 "protocol-buffers-schema@^3.3.1":
   "integrity" "sha512-YVCvdhxWNDP8/nJDyXLuM+UFsuPk4+1PB7WGPVDzm3HTHbzFLxQYeW2iZpS4mmnXrQJGBzt230t/BbEb7PrQaw=="
   "resolved" "https://registry.npmjs.org/protocol-buffers-schema/-/protocol-buffers-schema-3.5.1.tgz"
@@ -7378,6 +7388,14 @@
     "stable" "^0.1.8"
     "unquote" "~1.1.1"
     "util.promisify" "~1.0.0"
+
+"sweetalert@^2.1.2":
+  "integrity" "sha512-iWx7X4anRBNDa/a+AdTmvAzQtkN1+s4j/JJRWlHpYE8Qimkohs8/XnFcWeYHH2lMA8LRCa5tj2d244If3S/hzA=="
+  "resolved" "https://registry.npmjs.org/sweetalert/-/sweetalert-2.1.2.tgz"
+  "version" "2.1.2"
+  dependencies:
+    "es6-object-assign" "^1.1.0"
+    "promise-polyfill" "^6.0.2"
 
 "tapable@^1.0.0", "tapable@^1.1.3":
   "integrity" "sha512-4WK/bYZmj8xLr+HUCODHGF1ZFzsYffasLUgEiMBY4fgtltdO6B4WJtlSbPaDTLpYTcGVwM2qLnFTICEcNxs3kA=="
