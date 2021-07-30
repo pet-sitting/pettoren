@@ -28,6 +28,7 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
+import swal from 'sweetalert';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -42,7 +43,14 @@ document.addEventListener('turbolinks:load', () => {
   counter();
   filterPets();
   initMapbox();
-  
+
+  $('#sweetbook').on('click', function() {
+    swal({
+      title: "Booking succeed!",
+      icon: "success",
+    });
+  })
+
   function showImage(input) {
     if (input.files) {
       const preBox = document.getElementById('preview_box');

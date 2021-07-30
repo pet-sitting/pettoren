@@ -17,8 +17,8 @@ class BookingsController < ApplicationController
     if params[:"booking-dates"].empty?
       redirect_to pet_path(params[:pet_id])
       flash.alert = "Must select booking date(s)."
-    else
-      redirect_to booking_path(@booking)
+    # else
+    #   redirect_to booking_path(@booking)
     end
     authorize Booking
   end
