@@ -1,11 +1,5 @@
 class BookingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[create show]
   skip_after_action :verify_authorized, only: %i[create]
-
-  def show
-    @booking = Booking.find(params[:id])
-    authorize @booking
-  end
 
   def create
     params[:"booking-dates"].split(',').each do |date|
