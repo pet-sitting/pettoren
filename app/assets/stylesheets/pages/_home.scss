@@ -2,11 +2,22 @@ $mint-green: #CCEABB;
 $button-font-black: #0E0000;
 
 .parallax {
+  position: relative;
   height: 100vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
 }
 
 .banner-content-wrapper {
@@ -16,6 +27,7 @@ $button-font-black: #0E0000;
   align-items: center;
   color: #fffafa;
   padding-bottom: 60px;
+  padding-right: 50%;
   & .banner-text {
     padding-left: 160px;
   }

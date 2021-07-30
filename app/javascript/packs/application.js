@@ -40,6 +40,16 @@ import { counter } from '../components/counter';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  const bg = document.querySelectorAll(".parallax img")[0]
+  console.log(bg)
+  window.addEventListener("scroll", function () {
+    var value = window.scrollY;
+
+    bg.style.top = value * 0.5 + "px";
+
+  });
+
+
   $(document).ready(function () {
     $(this).scrollTop(0);
   });
@@ -48,14 +58,14 @@ document.addEventListener('turbolinks:load', () => {
   filterPets();
   initMapbox();
 
-  $('#sweetbook').on('click', function() {
+  $('#sweetbook').on('click', function () {
 
     if (document.querySelector("[name=booking-dates]").value == "") {
       swal({
         icon: 'error',
         title: 'Oops...',
         text: 'Please select dates for your booking.',
-      }).then(function() {
+      }).then(function () {
         window.location.reload();
       });
     } else {
@@ -63,7 +73,7 @@ document.addEventListener('turbolinks:load', () => {
         title: "Booking succeed!",
         icon: "success",
         button: "Close",
-      }).then(function(){
+      }).then(function () {
         window.location.reload();
       });
     }
