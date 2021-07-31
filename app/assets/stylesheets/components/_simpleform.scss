@@ -19,10 +19,10 @@
 }
 
 .simple_form input[type='submit'] {
-  margin: 25px 7% 15px 7%;
-  width: 86%;
-  background-color: #11beae;
-  color: white;
+  margin: 15px auto;
+  width: 35%;
+  background-color: #FDCB9E;
+  color: #3F3F44;
   border: none;
   padding: 10px 16px;
   cursor: pointer;
@@ -30,8 +30,8 @@
   // transition: .15s linear;
   transition: all 0.4s ease-out;
   &:hover {
-    background-color: #80c985;
-    color: #3F3F44;
+    background-color: #fc963e;
+    color: white;
   }
 }
 
