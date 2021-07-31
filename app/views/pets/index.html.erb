@@ -56,12 +56,16 @@
                   <p><%= pet.breed %></p>
                 </div>
                 <div class="pet-distance">
-                  <i class="fas fa-location-arrow"></i>
-                  <% owner_latitude = User.find(pet.user_id).latitude %>
-                  <% owner_longitude = User.find(pet.user_id).longitude %>
-                  <% distance_float = Geocoder::Calculations.distance_between([current_user.latitude, current_user.longitude], [owner_latitude, owner_longitude]) %>
-                  <% distance = distance_float.round(1) %>
-                  <p><%= "#{distance}km away" %></p>
+                  <% unless pet.user == current_user %>
+                    <i class="fas fa-location-arrow"></i>
+                    <% owner_latitude = User.find(pet.user_id).latitude %>
+                    <% owner_longitude = User.find(pet.user_id).longitude %>
+                    <% distance_float = Geocoder::Calculations.distance_between([current_user.latitude, current_user.longitude], [owner_latitude, owner_longitude]) %>
+                    <% distance = distance_float.round(1) %>
+                    <p><%= "#{distance}km away" %></p>
+                  <% else %>
+                    <p>My pet</p>
+                  <% end %>
                 </div>
               </div>
             </div>
