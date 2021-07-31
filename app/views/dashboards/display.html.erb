@@ -42,25 +42,30 @@
                 </div>
               </div>
             <% else %>
-              <div class="my-pets-card-title">
-                <h1 class="subtitle">My pets (<%= pluralize @user.pets.size, "pet" %>)</h1>
-              </div>
-              <% @user.pets.each do |pet| %>
-                <div class="my-pets-card">
-                  <div class="pets-card-image-wrapper">
-                    <%= cl_image_tag pet.pet_pics.first.key, crop: :fill %>
+              <div class="container">
+                <div>
+                  <div class="my-pets-card-title">
+                    <h1 class="subtitle">My pets (<%= pluralize @user.pets.size, "pet" %>)</h1>
                   </div>
-                  <div class="my-pets-card-infos">
-                    <h4><%= pet.name %></h4>
-                    <p><span>Breed: </span><%= pet.breed.capitalize %></p>
-                    <p><span>Description: </span><%= pet.description %></p>
+                  <div class="row">
+                    <% @user.pets.each do |pet| %>
+                      <div class="my-pets-card">
+                        <div class="pets-card-image-wrapper">
+                          <%= cl_image_tag pet.pet_pics.first.key, crop: :fill %>
+                        </div>
+                        <div class="my-pets-card-infos">
+                          <h4><%= pet.name %></h4>
+                          <p><span>Breed: </span><%= pet.breed.capitalize %></p>
+                          <p><span>Description: </span><%= pet.description %></p>
+                        </div>
+                      </div>
+                    <% end %>
                   </div>
                 </div>
-              <% end %>
+              </div>
             <% end %>
           </div>
         </div>
-
         <div class="hidebox" data-dashboard-target="bookings">
           <div class="container">
             <h1 class="subtitle">My bookings (<%= pluralize @bookings.size, "booking" %>)</h1>
