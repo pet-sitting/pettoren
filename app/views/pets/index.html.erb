@@ -1,5 +1,11 @@
 <div class="container top-margin">
   <div class="pets-filters">
+    <div class="pet-filter" id="all">
+      <div class="pet-filter-content">
+        <i class="fas fa-globe"></i>
+        <p>All</p>
+      </div>
+    </div>
     <div class="pet-filter" id="dog">
       <div class="pet-filter-content">
         <i class="fas fa-dog"></i>
@@ -25,42 +31,6 @@
       </div>
     </div>
   </div>
-  <div class="pets-nearby-list">
-    <div class="nearby-top">
-      <h3>Nearby</h3>
-      <%# <p>SEE ALL</p> %>
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        SEE ALL
-      </button>
-    </div>
-    <div class="nearby-bottom collapse" id="collapseExample">
-      <% nearby_users = User.near( current_user.address, 2 ) %>
-      <% users_ids = nearby_users.map { |nearby_user| nearby_user.id } %>
-      <% nearby_pets = Pet.all.select { |nearby_pet| users_ids.include? nearby_pet.user_id } %>
-      <% nearby_pets.each do |pet| %>
-        <% if pet.pet_pics.attached? %>
-          <%= link_to pet_path(pet[:id]) do %>
-            <div class="pet-card" data-species="<%= pet.species %>" style="background-position: center;background-size: cover;background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pet.pet_pics.first.key%>')">
-              <div class="pet-info-wrapper">
-                <div class="pet-info">
-                  <h4><%= pet.name %></h4>
-                  <p><%= pet.breed %></p>
-                </div>
-                <div class="pet-distance">
-                  <i class="fas fa-location-arrow"></i>
-                  <% owner_latitude = User.find(pet.user_id).latitude %>
-                  <% owner_longitude = User.find(pet.user_id).longitude %>
-                  <% distance_float = Geocoder::Calculations.distance_between([current_user.latitude, current_user.longitude], [owner_latitude, owner_longitude]) %>
-                  <% distance = distance_float.round(1) %>
-                  <p><%= "#{distance}km away" %></p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
   <div class="pets-all">
     <%if params[:query].present? %>
     <h3>Results for "<%=  params[:query]  %>"</h3>
@@ -68,8 +38,16 @@
     <h3>All pets</h3>
     <% end %>
     <div class="pets-all-list">
-      <% @pets.each do |pet| %>
-        <% if pet.pet_pics.attached? %>
+      <% owner_distance_sorted = User.near([current_user.latitude, current_user.longitude], 999999).order(:distance) %>
+      <% pets_distance_sorted = owner_distance_sorted.map do |owner| %>
+        <% unless owner.pets.first.nil? %>
+          <% owner.pets.all.each do |pet| %>
+            <% pet %>
+          <% end %>
+        <% end %>
+      <% end %>
+      <% pets_distance_sorted.flatten.each do |pet| %>
+        <% if pet && pet.pet_pics.attached? %>
           <%= link_to pet_path(pet[:id]) do %>
             <div class="pet-card filter" data-species="<%= pet.species %>" style="background-position: center;background-size: cover;background-image: url('<%= cl_image_path pet.pet_pics.first.key%>');">
               <div class="pet-info-wrapper">

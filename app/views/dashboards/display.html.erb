@@ -1,83 +1,122 @@
-<div class="top-box" />
-<div class="container pt-5 mt-5">
-  <div class="row">
-    <div class="col-12 col-lg-3">
-      <div class="dashboard-user">
-        <div class="user-avatar-box">
-          <%= cl_image_tag @user.user_pic.key, class: :"user-avatar", crop: :fill %>
-        </div>
-        <h3><%= @user.name.capitalize %></h3>
-      </div>
-    </div>
-    <div class="col-12 col-lg-9">
-      <div class="dashboard-content">
-        <div class="content-titles" >
-          <button class="dashboard-btn" type="button" data-toggle="collapse" data-target="#collapsepets" aria-expanded="false" aria-controls="collapsepets">
-            <i class="fas fa-paw"></i> Pets
-          </button>
-          <button class="dashboard-btn" type="button" data-toggle="collapse" data-target="#collapsebookings" aria-expanded="false" aria-controls="collapsebookings">
-            <i class="far fa-calendar-alt"></i> Bookings
-          </button>
-          <button class="dashboard-btn" type="button" data-toggle="collapse" data-target="#collapserequests" aria-expanded="false" aria-controls="collapserequests">
-            <i class="fas fa-envelope-square"></i> Requests
-          </button>
-          <div class="content-show">
+<div class="container" data-controller="dashboard">
+  <div class="content-container">
+    <div class="row" style="padding-top: 100px">
+      <div class="col-12 col-lg-3">
+        <div class="dashboard-user">
+          <div class="user-avatar-box">
+            <%= cl_image_tag @user.user_pic.key, class: :"user-avatar", crop: :fill %>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="content-container">
-  <div class="row">
-    <div class="col-12 col-lg-9">
-      <div class="content-pets collapse"  id="collapsepets">
-        <% if @user.pets.empty? %>
-          <div class="my-pets-card-add">
-            <%= link_to "➕ Add pet", new_pet_path %>
-          </div>
-        <% else %>
-          <div class="my-pets-card-title">
-            <h1 class="subtitle">My pets</h1>
-          </div>
-          <% @user.pets.each do |pet| %>
-            <div class="my-pets-card">
-              <%= cl_image_tag pet.pet_pics.first.key, crop: :fill %>
-              <div class="my-pets-card-infos">
-                <h4><%= pet.name %></h4>
-                <p><span>Breed: </span><%= pet.breed.capitalize %></p>
-                <p><span>Description: </span><%= pet.description %></p>
-              </div>
+      <div class="col-12 col-lg-9">
+        <div class="dashboard-content-wrapper">
+          <div class="dashboard-content">
+            <h3><%= @user.name.capitalize %></h3>
+            <div class="line" style="margin-left: 26px;"></div>
+            <div class="content-titles" >
+              <button class="dashboard-btn" data-action="click->dashboard#showpets">
+                <i class="fas fa-paw"></i> Pets
+              </button>
+              <button class="dashboard-btn" type="button" data-action="click->dashboard#showbookings">
+                <i class="far fa-calendar-alt"></i> Bookings
+              </button>
+              <button class="dashboard-btn" type="button" data-action="click->dashboard#showrequests">
+                <i class="fas fa-envelope-square"></i> Requests
+              </button>
             </div>
-          <% end %>
-        <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  </div>
-
-  <div class="collapse" id="collapsebookings">
-    <div class="container">
-      <h1 class="subtitle">My bookings</h1>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <% unless @bookings.empty? %>
-          <% @bookings.each do |booking| %>
-            <div class="col pb-3">
-              <div class="card h-100 border-dark">
-                <div class="card-header text-secondary">Booked <%= link_to booking.pet.name, pet_path(booking.pet) %> at: <%= booking.created_at %></div>
-                <%= cl_image_tag booking.pet.pet_pics.first.key, class: :"card-img-top", crop: :fill %>
-                <div class="card-body">
-                  <p class="card-text">Address: <%= booking.pet.user.address %></p>
-                  <h4 class="card-title">Booking date: <%= booking.date %></h4>
+  <div class="content-container">
+    <div class="row">
+      <div>
+        <div class="content-pets hidebox" data-dashboard-target="pets">
+          <div class="container">
+            <% if @user.pets.empty? %>
+              <div class="my-pets-card-add">
+                <div class="add-pet-wrapper">
+                  <i class="fas fa-plus-circle"></i>
+                  <%= link_to "Add pet", new_pet_path %>
                 </div>
               </div>
+            <% else %>
+              <div class="container">
+                <div>
+                  <div class="my-pets-card-title">
+                    <h1 class="subtitle">My pets (<%= pluralize @user.pets.size, "pet" %>)</h1>
+                  </div>
+                  <div class="row">
+                    <% @user.pets.each do |pet| %>
+                      <div class="my-pets-card">
+                        <div class="pets-card-image-wrapper">
+                          <%= cl_image_tag pet.pet_pics.first.key, crop: :fill %>
+                        </div>
+                        <div class="my-pets-card-infos">
+                          <h4><%= pet.name %></h4>
+                          <p><span>Breed: </span><%= pet.breed.capitalize %></p>
+                          <p><span>Description: </span><%= pet.description %></p>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="hidebox" data-dashboard-target="bookings">
+          <div class="container">
+            <h1 class="subtitle">My bookings (<%= pluralize @bookings.size, "booking" %>)</h1>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <% unless @bookings.empty? %>
+                <% @bookings.each do |booking| %>
+                  <div class="col pb-3">
+                    <div class="card booking-card">
+                      <%= cl_image_tag booking.pet.pet_pics.first.key, class: :"booking-card-img", crop: :fill %>
+                      <div class="card-body">
+                        <div class="card-status text-secondary">
+                          Booked <%= link_to booking.pet.name, pet_path(booking.pet) %> at: <br> <%= booking.created_at.to_s(:long) %>
+                          <% if booking.pending? %>
+                            <h1 class="booking-tag-pending">Pending</h1>
+                          <% elsif booking.rejected? %>
+                            <h1 class="booking-tag-rejected">Rejected</h1>
+                          <% else %>
+                            <h1 class="booking-tag-accepted">Accepted</h1>
+                          <% end %>
+                        </div>
+                        <div class="card-title-wrapper">
+                          <i class="far fa-calendar-alt"></i>
+                          <h4 class="card-title"><%= booking.date %></h4>
+                        </div>
+                        <div class="card-text-wrapper">
+                          <i class="fas fa-map-marked-alt"></i>
+                          <p class="card-text"><%= booking.pet.user.address %></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
             </div>
-          <% end %>
-        <% end %>
+          </div>
+        </div>
+
+        <div class="hidebox" data-dashboard-target="requests">
+          <div class="container">
+            <h1 class="subtitle">Booking requests (<%= pluralize @requests.size, "request" %>)</h1>
+            <div class="row">
+              <%= render 'shared/bookings' %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
 
 

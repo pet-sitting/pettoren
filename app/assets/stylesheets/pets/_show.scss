@@ -1,6 +1,6 @@
 .show-card {
     height: 520px;
-    border-radius: 16px;
+    border-radius: 15px;
     width: 100%;
 }
 
@@ -15,6 +15,7 @@
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   background-color: white;
+
   & p {
     margin-bottom: 0px;
     color: #333;
@@ -26,6 +27,10 @@
 
 .calendar {
   flex: 35%;
+}
+
+.calendar .calendar-box {
+  border-radius: 0 0 15px 15px;
 }
 
 .line {
@@ -48,15 +53,6 @@
     border-bottom: 3px solid rgb(215, 215, 215);
     margin-bottom: 0;
   }
-}
-
-.show-card {
-  height: 517px;
-  border-radius: 32px;
-  width: 100%;
-  padding-left: 77px;
-  padding-top: 60px;
-
 }
 
 .details-name-breed h2 {

@@ -1,14 +1,15 @@
-<div class="parallax" style="background-image: url(<%= asset_path 'parallax_bg.jpg' %>)">
-  <div class="banner-content animated fadeInUp">
-    <div class="banner-text">
-      <h1>Become a petsitter!</h1>
-      <p>
-        Do you want to take care of a cute dog? <br> How about playing for a few hours with a cat?
-      </p>
-    </div>
-    <div class="cta-wrapper">
-      <div class="banner-cta">
-        <%= link_to "Find a pet!", pets_path %>
+<div class="parallax">
+  <%= image_tag(asset_path "bg.png") %>
+  <%= image_tag(asset_path "grass.png") %>
+  <div class="banner-content-wrapper animated fadeInUp">
+    <div class="banner-content">
+      <div class="banner-text">
+        <h1>Make pet friends in your area!</h1>
+      </div>
+      <div class="cta-wrapper">
+        <div class="banner-cta">
+          <%= link_to "Find a pet!", pets_path %>
+        </div>
       </div>
     </div>
   </div>
@@ -86,6 +87,19 @@
       <div class="stat-number"><span id="user-count" data-count="<%= User.count %>"></span></div>
       <div class="stat-text">Users</div>
     </div>
+  </div>
+</div>
+<div class="register-wrapper">
+  <div class="register-left">
+    <div class="registration-form-wrapper">
+      <div class="registration-form">
+        <%= render "registration_form"%>
+      </div>
+    </div>
+  </div>
+  <div class="register-right">
+    <%= image_tag(asset_path 'pets_group_2.png') %>
+    <div class="circle"></div>
   </div>
 </div>
 <div class="parallax-reviews" style="background-image: url(<%= asset_path 'review_bg.jpg' %>)">

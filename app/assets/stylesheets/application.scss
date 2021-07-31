@@ -20,4 +20,14 @@
 
 body {
   font-family: "Nunito", "Helvetica", "sans-serif";
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url(https://i.ibb.co/jW4wVLX/background7.png);
+  background-size: 100%;
+}
+
+
+main {
+  flex: 1;
 }
