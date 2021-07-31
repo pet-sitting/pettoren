@@ -49,11 +49,6 @@ document.addEventListener('turbolinks:load', () => {
 
   });
 
-
-  $(document).ready(function () {
-    $(this).scrollTop(0);
-  });
-
   counter();
   filterPets();
   initMapbox();
