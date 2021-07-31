@@ -3,9 +3,13 @@
     <div class="row" style="padding-top: 100px">
       <div class="col-12 col-lg-3">
         <div class="dashboard-user">
-          <div class="user-avatar-box">
-            <%= cl_image_tag @user.user_pic.key, class: :"user-avatar", crop: :fill %>
-          </div>
+          <% if @user.user_pic.attached? %>
+            <div class="user-avatar-box">
+              <%= cl_image_tag @user.user_pic.key, class: :"user-avatar", crop: :fill %>
+            </div>
+          <% else %>
+            <img src="https://img.icons8.com/ios-filled/100/000000/user-male-circle.png" class="user-avatar-for-none" />
+          <% end %>
         </div>
       </div>
       <div class="col-12 col-lg-9">
