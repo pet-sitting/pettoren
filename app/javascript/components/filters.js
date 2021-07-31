@@ -3,10 +3,6 @@ const filterPets = () => {
   const petCards = document.querySelectorAll(".pet-card");
   const headerPetsAll = document.getElementById("filter")
 
-  // const capitalize = (string) => {
-  //   string[0].toUpperCase() + string.substring(1)
-  // }
-
   filters.forEach((filter) => {
     filter.addEventListener("click", (e) => {
       petCards.forEach((petCard) => {

@@ -18,7 +18,7 @@
 
 .pets-filters {
   display: flex;
-  margin: 50px 0;
+  padding: 50px 0;
 }
 
 .pet-filter {
@@ -42,9 +42,13 @@
   & p {
     margin-bottom: 0px;
     font-size: 14px;
+    text-align: center;
   }
   & i {
     font-size: 32px;
+  }
+  & img {
+    height: 35px;
   }
 }
 
