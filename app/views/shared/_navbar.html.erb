@@ -1,12 +1,16 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag (asset_path "pettu_logo.png") %>
-  <% end %>
-  <div class="flex">
-    <div>
-      <%= form_tag pets_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Look for a furry friend!"%>
-    </div>
+  <%= link_to pets_path, class: "navbar-brand" do %>
+       <%= image_tag (asset_path "pettu_logo.png") %>
+     <% end %>
+    <div class="flex" style=" width: 40%">
+      <div style=" width: 100%">
+        <%= form_tag pets_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Look for a furry friend!"
+  %>
+  </div>
   <div>
   <%= button_tag(:class => "search-button") do %>
      <i class="fas fa-paw fa-lg"></i>
