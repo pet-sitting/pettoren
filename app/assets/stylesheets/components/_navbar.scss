@@ -46,12 +46,14 @@
     background-color: transparent;
     transform: rotate(45deg);
     border-color: transparent;
+    position: relative;
+    left: -39px;
 }
 
 .flex {
   align-items: center;
   & input {
-    width: 500px;
+    width: 100%;
   }
 }
 
