@@ -2,11 +2,6 @@ import { Controller } from "stimulus";
 
 export default class extends Controller {
   static targets = [ 'pets', 'bookings', 'requests' ];
-  connect() {
-    console.log(this.petsTarget);
-    console.log(this.bookingsTarget);
-    console.log(this.requestsTarget);
-  }
 
   showpets() {
     this.petsTarget.classList.remove('hidebox');

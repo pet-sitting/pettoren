@@ -43,7 +43,7 @@
               </div>
             <% else %>
               <div class="my-pets-card-title">
-                <h1 class="subtitle">My pets</h1>
+                <h1 class="subtitle">My pets (<%= pluralize @user.pets.size, "pet" %>)</h1>
               </div>
               <% @user.pets.each do |pet| %>
                 <div class="my-pets-card">
@@ -63,7 +63,7 @@
 
         <div class="hidebox" data-dashboard-target="bookings">
           <div class="container">
-            <h1 class="subtitle">My bookings</h1>
+            <h1 class="subtitle">My bookings (<%= pluralize @bookings.size, "booking" %>)</h1>
             <div class="row row-cols-1 row-cols-md-3 g-4">
               <% unless @bookings.empty? %>
                 <% @bookings.each do |booking| %>
@@ -100,7 +100,7 @@
 
         <div class="hidebox" data-dashboard-target="requests">
           <div class="container">
-            <h1 class="subtitle">Booking requests</h1>
+            <h1 class="subtitle">Booking requests (<%= pluralize @requests.size, "request" %>)</h1>
             <div class="row">
               <%= render 'shared/bookings' %>
             </div>
