@@ -141,3 +141,5 @@ document.addEventListener('turbolinks:load', () => {
 
   setCarousel();
 });
+
+import "controllers"
