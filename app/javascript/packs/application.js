@@ -41,13 +41,14 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   const bg = document.querySelectorAll(".parallax img")[0]
-  console.log(bg)
-  window.addEventListener("scroll", function () {
-    var value = window.scrollY;
+  if (bg) {
+    window.addEventListener("scroll", function () {
+      var value = window.scrollY;
 
-    bg.style.top = value * 0.5 + "px";
+      bg.style.top = value * 0.5 + "px";
 
-  });
+    });
+  }
 
   counter();
   filterPets();

@@ -24,14 +24,16 @@
   </div>
 </div>
 
-<div class="sf-outfit-schedule">
-  <div class="petcard-for-schedule">
-  <% @pet=Pet.find(params[:pet_id])  %>
-  <%= cl_image_tag @pet.pet_pics.first.key, height: 400, width: 400, crop: :fill %>
-    <div class="petcard-for-schedule-infos">
-      <h2><%= @pet.name %>(<%= @pet.breed %>)</h2>
-      <p><%= @pet.description %></p>
+<div class="container">
+  <div class="sf-outfit-schedule">
+    <div class="petcard-for-schedule">
+    <% @pet=Pet.find(params[:pet_id])  %>
+    <%= cl_image_tag @pet.pet_pics.first.key, height: 400, width: 400, crop: :fill %>
+      <div class="petcard-for-schedule-infos">
+        <h2><%= @pet.name %>(<%= @pet.breed %>)</h2>
+        <p><%= @pet.description %></p>
+      </div>
     </div>
+    <%= render 'shared/simple_form_for_schedule' %>
   </div>
-  <%= render 'shared/simple_form_for_schedule' %>
 </div>

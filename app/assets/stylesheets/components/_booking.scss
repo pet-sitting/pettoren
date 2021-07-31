@@ -120,7 +120,8 @@
 }
 
 .card-text-wrapper,
-.card-title-wrapper {
+.card-title-wrapper,
+.card-email-wrapper {
   opacity: 0.6;
   display: flex;
   justify-content: start;
@@ -135,9 +136,16 @@
 }
 
 .card-title-wrapper {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   & i {
-    margin-left: 5px;
+    margin-left: 4px;
+  }
+}
+
+.card-email-wrapper {
+  margin-bottom: 16px;
+  & i {
+    margin-left: 2px;
   }
 }
 

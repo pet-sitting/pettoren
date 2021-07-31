@@ -18,10 +18,10 @@
         <p>Cats</p>
       </div>
     </div>
-    <div class="pet-filter " id="bird">
+    <div class="pet-filter " id="rabbit">
       <div class="pet-filter-content">
-        <i class="fas fa-crow"></i>
-        <p>Birds</p>
+        <%= image_tag(asset_path "rabbit_icon.png") %>
+        <p>Rabbits</p>
       </div>
     </div>
     <div class="pet-filter " id="others">
@@ -35,7 +35,7 @@
     <%if params[:query].present? %>
     <h3>Results for "<%=  params[:query]  %>"</h3>
     <% else  %>
-    <h3>All pets</h3>
+    <h3 id="filter">All pets</h3>
     <% end %>
     <div class="pets-all-list">
       <% owner_distance_sorted = User.near([current_user.latitude, current_user.longitude], 999999).order(:distance) %>

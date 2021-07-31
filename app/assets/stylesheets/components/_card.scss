@@ -134,13 +134,12 @@ box-shadow: 0 8px 16px rgba(0,0,0,0.3);
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
       display: flex;
       align-items: center;
-      margin-bottom: 50px;
     }
 
   .petcard-for-schedule img {
     height: 100%;
     width: 120px;
-    border-radius: 3px;
+    border-radius: 15px;
     object-fit: cover;
   }
 
@@ -171,8 +170,7 @@ box-shadow: 0 8px 16px rgba(0,0,0,0.3);
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
       display: flex;
       align-items: center;
-      margin-bottom: 50px;
-      border-radius: 1px;
+      border-radius: 15px;
     }
 
   .petcard-for-schedule img {

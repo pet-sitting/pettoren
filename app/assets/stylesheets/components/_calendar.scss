@@ -1,5 +1,5 @@
 .wrapbox {
-  height: 500px;
+  height: 450px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -36,6 +36,7 @@
   width: 18%;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
   & p {
     color: #80c985;
   }
@@ -76,3 +77,6 @@
   opacity: 1;
 }
 
+#schedule_button {
+  width: 35%;
+}
