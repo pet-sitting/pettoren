@@ -11,6 +11,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= stylesheet_pack_tag 'application' %>
 
+    <%= favicon_link_tag("dog_head.png") %>
   </head>
 
   <body>
@@ -18,8 +19,11 @@
         <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
-    <p style="margin-bottom: 0px;"><%= notice %></p>
-    <p style="margin-bottom: 0px;"><%= alert %></p>
-    <%= yield %>
+    <main>
+      <p style="margin-bottom: 0px;"><%= notice %></p>
+      <p style="margin-bottom: 0px;"><%= alert %></p>
+      <%= yield %>
+    </main>
+    <%= render 'shared/footer' %>
   </body>
 </html>
