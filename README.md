@@ -8,7 +8,7 @@
 
 ## Introduction
 
-Pettoren is a website that allows pet owners to list their pet's availability, to help them find nearby reliable pet sitters. Conversely, it also help pet sitters easily find nearby available pets to take care of.
+Pettoren is a website that allows pet owners to list their pet's availability, to help them find nearby reliable pet sitters. Conversely, it also helps pet sitters easily find nearby available pets to take care of.
 
 ## Languages and tools
 <p>
